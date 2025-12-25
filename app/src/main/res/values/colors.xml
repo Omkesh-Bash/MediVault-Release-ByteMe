@@ -1,0 +1,21 @@
+<resources>
+    <color name="primaryColor">#4CAF50</color>
+    <color name="primaryDarkColor">#388E3C</color>
+    <color name="accentColor">#FFC107</color>
+    <color name="textColor">#212121</color>
+    <color name="hintColor">#757575</color>
+    <color name="backgroundColor">#FAFAFA</color>
+
+        <color name="mv_primary">#1976D2</color>
+        <color name="mv_primary_light">#64B5F6</color>
+        <color name="mv_accent">#4CAF50</color>
+        <color name="mv_bg">#F5F9FF</color>
+        <color name="mv_text">#333333</color>
+        <color name="mv_subtext">#777777</color>
+        <color name="mv_error">#E53935</color>
+        <color name="white">#FFFFFF</color>
+        <color name="purple_500">#6200EE</color>
+        <color name="purple_700">#3700B3</color>
+        <color name="teal_200">#03DAC5</color>
+
+</resources>

@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">MediVault+</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="search_hint">Search by type/doctor/date</string>
+    <string name="upload_report">Upload Report</string>
+    <string name="get_started">Get Started</string>
+    <string name="logo">Logo</string>
+    <string name="don_t_have_an_account_sign_up">Don’t have an account? Sign up</string>
+    <string name="Password">Password</string>
+    <string name="Login">Login</string>
+    <string name="Sign_up">Sign Up</string>
+    <string name="Email">Email</string>
+    <string name="mail">Email</string>
+    <string name="medivault">\n</string>
+
+    <string-array name="genders">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="blood_groups">
+        <item>Blood Group</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+</resources>
+

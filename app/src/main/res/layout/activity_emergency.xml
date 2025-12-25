@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAFB"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="50dp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/tvHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Emergency Information"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#1976D2"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Emergency Form Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <EditText
+                    android:id="@+id/etBloodGroup"
+                    android:hint="Blood Group"
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@android:drawable/ic_menu_info_details"
+                    android:padding="14dp"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_marginBottom="14dp"/>
+
+                <EditText
+                    android:id="@+id/etAllergies"
+                    android:hint="Allergies"
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@android:drawable/ic_menu_edit"
+                    android:padding="14dp"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_marginBottom="14dp" />
+
+                <EditText
+                    android:id="@+id/etEmergencyContact"
+                    android:hint="Emergency Contact No."
+                    android:inputType="phone"
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@android:drawable/ic_menu_call"
+                    android:padding="14dp"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_marginBottom="14dp"
+                    android:maxLength="10"/>
+
+                <EditText
+                    android:id="@+id/etDoctorContact"
+                    android:hint="Doctor Contact No."
+                    android:inputType="phone"
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@android:drawable/ic_menu_myplaces"
+                    android:padding="14dp"
+                    android:background="@drawable/edittext_bg"
+                    android:layout_marginBottom="16dp"
+                    android:maxLength="10"/>
+
+                <Button
+                    android:id="@+id/btnSaveEmergency"
+                    android:text="Save Emergency Info"
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg"
+                    android:textColor="@android:color/white"
+                    android:padding="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

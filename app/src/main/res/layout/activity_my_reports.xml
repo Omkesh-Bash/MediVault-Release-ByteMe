@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F9FA"
+    android:padding="20dp"
+    tools:context=".MyReportsActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📑 My Reports"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="#1976D2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reportsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="5dp" />
+
+    <Button
+        android:id="@+id/btnShareAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📤 Share All Reports"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#009688"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:elevation="6dp" />
+</LinearLayout>

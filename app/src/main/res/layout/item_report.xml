@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="6dp"
+    android:backgroundTint="#E3F2FD">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- DATE + SHARE ICON (Top Row) -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp">
+
+            <LinearLayout
+                android:id="@+id/dateLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_calendar_today"
+                    app:tint="#2196F3" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="1/10/2025"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <!-- SHARE ICON (top-right corner) -->
+            <ImageButton
+                android:id="@+id/btnShareSingle"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_share"
+                app:tint="#009688"
+                android:contentDescription="Share Report"
+                android:elevation="0dp"
+                android:outlineProvider="none"
+                android:stateListAnimator="@null" />
+        </RelativeLayout>
+
+        <!-- REPORT TYPE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_description"
+                app:tint="#4CAF50" />
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Blood Test"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- NOTES -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_note"
+                app:tint="#FF9800" />
+
+            <TextView
+                android:id="@+id/tvNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Fasting Sample"
+                android:textSize="15sp"
+                android:textColor="#555555" />
+        </LinearLayout>
+
+        <!-- VIEW BUTTON -->
+        <Button
+            android:id="@+id/btnViewReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Report"
+            android:textAllCaps="false"
+            android:backgroundTint="#00BCD4"
+            android:textColor="#FFFFFF"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_gravity="center_horizontal"
+            android:elevation="3dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

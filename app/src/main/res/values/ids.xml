@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tv_report_type" type="id" />
+    <item name="tv_report_date" type="id" />
+    <item name="btn_view" type="id" />
+    <item name="btn_download" type="id" />
+</resources>
