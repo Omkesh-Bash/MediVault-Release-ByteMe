@@ -12,10 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.File;
 import java.util.List;
 
 public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportViewHolder> {
@@ -41,52 +39,35 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
     public void onBindViewHolder(@NonNull ReportViewHolder holder, int position) {
         Report report = reports.get(position);
 
-        // Prevent null display
-        holder.tvDate.setText(report.getDate() != null ? report.getDate() : "");
-        holder.tvType.setText(report.getType() != null ? report.getType() : "");
-        holder.tvNotes.setText(report.getFileName() != null ? report.getFileName() : "");
+        // Display safely
+        holder.tvDate.setText(report.date != null ? report.date : "");
+        holder.tvType.setText(report.type != null ? report.type : "");
+        holder.tvNotes.setText(report.title != null ? report.title : "");
 
-        // View Report
+        // 🔹 View report (open URL)
         holder.btnViewReport.setOnClickListener(v -> {
             if (listener != null) listener.onClick(report);
         });
 
-        // Share Report (top-right icon)
+        // 🔹 Share report (share link)
         holder.btnShareSingle.setOnClickListener(v -> {
-            try {
-                File reportsDir = new File(context.getFilesDir(), "MyReports");
-                File file = new File(reportsDir, report.getFileName());
-
-                if (!file.exists()) {
-                    Toast.makeText(context, "File not found ❌", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                Uri uri = FileProvider.getUriForFile(
-                        context,
-                        context.getPackageName() + ".provider",
-                        file
-                );
-
-                Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                if (report.getFileName().toLowerCase().endsWith(".pdf")) {
-                    shareIntent.setType("application/pdf");
-                } else if (report.getFileName().toLowerCase().endsWith(".jpg") ||
-                        report.getFileName().toLowerCase().endsWith(".jpeg") ||
-                        report.getFileName().toLowerCase().endsWith(".png")) {
-                    shareIntent.setType("image/*");
-                } else {
-                    shareIntent.setType("*/*");
-                }
-
-                shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
-                shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-
-                context.startActivity(Intent.createChooser(shareIntent, "Share this report via"));
-            } catch (Exception e) {
-                e.printStackTrace();
-                Toast.makeText(context, "Unable to share report ❌", Toast.LENGTH_SHORT).show();
+            if (report.fileUrl == null || report.fileUrl.isEmpty()) {
+                Toast.makeText(context, "Invalid report link ❌", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(
+                    Intent.EXTRA_TEXT,
+                    "Medical Report:\n" +
+                            report.title + " (" + report.type + ")\n\n" +
+                            report.fileUrl
+            );
+
+            context.startActivity(
+                    Intent.createChooser(shareIntent, "Share report via")
+            );
         });
     }
 
@@ -95,6 +76,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         return reports.size();
     }
 
+    // 🔹 ViewHolder
     public static class ReportViewHolder extends RecyclerView.ViewHolder {
         TextView tvDate, tvType, tvNotes;
         Button btnViewReport;
@@ -110,6 +92,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         }
     }
 
+    // 🔹 Click callback
     public interface OnReportClickListener {
         void onClick(Report report);
     }

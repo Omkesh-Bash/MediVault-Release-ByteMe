@@ -21,6 +21,7 @@ public class SignupActivity extends AppCompatActivity {
     EditText etName, etEmail, etPassword, etAge, etEmergency;
     Spinner spinnerBloodGroup, spinnerGender;
     Button btnSignup;
+
     FirebaseAuth auth;
     FirebaseFirestore firestore;
 
@@ -29,7 +30,7 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        // Initialize UI components
+        // UI references
         etName = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
@@ -39,6 +40,7 @@ public class SignupActivity extends AppCompatActivity {
         etEmergency = findViewById(R.id.etEmergency);
         btnSignup = findViewById(R.id.btnSignup);
 
+        // Gender spinner
         ArrayAdapter<CharSequence> genderAdapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.genders,
@@ -47,6 +49,7 @@ public class SignupActivity extends AppCompatActivity {
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerGender.setAdapter(genderAdapter);
 
+        // Blood group spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.blood_groups,
@@ -55,11 +58,12 @@ public class SignupActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerBloodGroup.setAdapter(adapter);
 
-        // Initialize Firebase
+        // Firebase init
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
         btnSignup.setOnClickListener(v -> {
+
             String name = etName.getText().toString().trim();
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
@@ -68,7 +72,9 @@ public class SignupActivity extends AppCompatActivity {
             String bloodGroup = spinnerBloodGroup.getSelectedItem().toString();
             String emergency = etEmergency.getText().toString().trim();
 
-            if (name.isEmpty() || email.isEmpty() || password.isEmpty() || age.isEmpty() || emergency.isEmpty()) {
+            // Validation
+            if (name.isEmpty() || email.isEmpty() || password.isEmpty()
+                    || age.isEmpty() || emergency.isEmpty()) {
                 Toast.makeText(this, "Please fill in all required fields", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -82,21 +88,21 @@ public class SignupActivity extends AppCompatActivity {
                 Toast.makeText(this, "Please select a valid Gender", Toast.LENGTH_SHORT).show();
                 return;
             }
+
             if (spinnerBloodGroup.getSelectedItemPosition() == 0) {
                 Toast.makeText(this, "Please select a valid Blood Group", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            // ✅ Create user in Firebase Auth
+            // 🔥 Create user in Firebase Auth
             auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
+
                         if (task.isSuccessful()) {
 
-                            // ✅ CLEAR any old reports for new account
-                            ReportUtils.clearReports(this);
-                            EmergencyActivity.clearEmergencyInfo(this);
+                            String uid = auth.getCurrentUser().getUid();
 
-                            // Save additional details in Firestore
+                            // Save user profile in Firestore
                             Map<String, Object> userMap = new HashMap<>();
                             userMap.put("name", name);
                             userMap.put("email", email);
@@ -105,17 +111,23 @@ public class SignupActivity extends AppCompatActivity {
                             userMap.put("bloodGroup", bloodGroup);
                             userMap.put("emergency", emergency);
 
-                            String uid = auth.getCurrentUser().getUid();
-                            firestore.collection("users").document(uid)
+                            firestore.collection("users")
+                                    .document(uid)
                                     .set(userMap)
                                     .addOnSuccessListener(aVoid -> {
-                                        Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(this, "Signup Successful ✅", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(SignupActivity.this, HomeActivity.class));
                                         finish();
                                     })
-                                    .addOnFailureListener(e -> Toast.makeText(this, "Firestore Error: " + e.getMessage(), Toast.LENGTH_LONG).show());
+                                    .addOnFailureListener(e ->
+                                            Toast.makeText(this,
+                                                    "Firestore Error: " + e.getMessage(),
+                                                    Toast.LENGTH_LONG).show()
+                                    );
+
                         } else {
-                            Toast.makeText(this, "Signup Failed: " + task.getException().getMessage(),
+                            Toast.makeText(this,
+                                    "Signup Failed: " + task.getException().getMessage(),
                                     Toast.LENGTH_LONG).show();
                         }
                     });
