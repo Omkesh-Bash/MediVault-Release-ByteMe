@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,18 +16,21 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportViewHolder> {
+public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportViewHolder> implements Filterable {
 
     Context context;
     List<Report> reports;
+    List<Report> reportsFull;
     OnReportClickListener listener;
 
     public ReportAdapter(Context context, List<Report> reports, OnReportClickListener listener) {
         this.context = context;
         this.reports = reports;
         this.listener = listener;
+        this.reportsFull = new ArrayList<>(reports);
     }
 
     @NonNull
@@ -75,6 +80,42 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
     public int getItemCount() {
         return reports.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return reportFilter;
+    }
+
+    private Filter reportFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<Report> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(reportsFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (Report item : reportsFull) {
+                    if (item.title.toLowerCase().contains(filterPattern) || item.type.toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            reports.clear();
+            reports.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     // 🔹 ViewHolder
     public static class ReportViewHolder extends RecyclerView.ViewHolder {
