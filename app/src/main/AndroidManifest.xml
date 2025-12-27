@@ -43,6 +43,7 @@
         <activity android:name=".MyReportsActivity" />
         <activity android:name=".EmergencyActivity" />
         <activity android:name=".ViewReportActivity" />
+        <activity android:name=".AiChatActivity" />
 
     </application>
 

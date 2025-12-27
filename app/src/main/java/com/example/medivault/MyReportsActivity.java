@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -13,15 +14,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyReportsActivity extends AppCompatActivity {
+public class MyReportsActivity extends AppCompatActivity implements ReportAdapter.OnReportClickListener {
 
     RecyclerView recyclerView;
     ReportAdapter adapter;
     List<Report> reportList;
     EditText etSearch;
+    FloatingActionButton fabAiChat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +38,7 @@ public class MyReportsActivity extends AppCompatActivity {
         reportList = new ArrayList<>();
 
         // Adapter → open report using URL
-        adapter = new ReportAdapter(this, reportList, report ->
-                openReport(report.fileUrl)
-        );
+        adapter = new ReportAdapter(this, reportList, this);
         recyclerView.setAdapter(adapter);
 
         // Load reports from Firebase
@@ -49,6 +51,8 @@ public class MyReportsActivity extends AppCompatActivity {
         }
 
         etSearch = findViewById(R.id.etSearch);
+        fabAiChat = findViewById(R.id.fab_ai_chat);
+        fabAiChat.setVisibility(View.GONE);
 
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -65,6 +69,18 @@ public class MyReportsActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
 
             }
+        });
+
+        fabAiChat.setOnClickListener(v -> {
+            List<Report> selectedReports = adapter.getSelectedReports();
+            ArrayList<String> selectedFileUrls = new ArrayList<>();
+            for (Report report : selectedReports) {
+                selectedFileUrls.add(report.fileUrl);
+            }
+
+            Intent intent = new Intent(MyReportsActivity.this, AiChatActivity.class);
+            intent.putStringArrayListExtra("fileUrls", selectedFileUrls);
+            startActivity(intent);
         });
     }
 
@@ -137,5 +153,19 @@ public class MyReportsActivity extends AppCompatActivity {
         shareIntent.putExtra(Intent.EXTRA_TEXT, shareText.toString());
 
         startActivity(Intent.createChooser(shareIntent, "Share reports via"));
+    }
+
+    @Override
+    public void onViewReportClick(Report report) {
+        openReport(report.fileUrl);
+    }
+
+    @Override
+    public void onItemClick(Report report) {
+        if (adapter.getSelectedReports().size() > 0) {
+            fabAiChat.setVisibility(View.VISIBLE);
+        } else {
+            fabAiChat.setVisibility(View.GONE);
+        }
     }
 }
