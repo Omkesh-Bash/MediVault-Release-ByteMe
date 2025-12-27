@@ -2,7 +2,9 @@ package com.example.medivault;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -25,12 +28,17 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
     List<Report> reports;
     List<Report> reportsFull;
     OnReportClickListener listener;
+    private SparseBooleanArray selectedItems;
+    private List<Report> selectedReports;
+
 
     public ReportAdapter(Context context, List<Report> reports, OnReportClickListener listener) {
         this.context = context;
         this.reports = reports;
         this.listener = listener;
         this.reportsFull = new ArrayList<>(reports);
+        this.selectedItems = new SparseBooleanArray();
+        this.selectedReports = new ArrayList<>();
     }
 
     @NonNull
@@ -49,9 +57,24 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         holder.tvType.setText(report.type != null ? report.type : "");
         holder.tvNotes.setText(report.title != null ? report.title : "");
 
+        // Change background color if selected
+        holder.itemView.setSelected(selectedItems.get(position, false));
+        if (selectedItems.get(position, false)) {
+            holder.cardView.setCardBackgroundColor(Color.LTGRAY);
+        } else {
+            holder.cardView.setCardBackgroundColor(Color.WHITE);
+        }
+
+
+        // Toggle selection on item click
+        holder.itemView.setOnClickListener(v -> {
+            toggleSelection(position);
+            listener.onItemClick(report);
+        });
+
         // 🔹 View report (open URL)
         holder.btnViewReport.setOnClickListener(v -> {
-            if (listener != null) listener.onClick(report);
+            if (listener != null) listener.onViewReportClick(report);
         });
 
         // 🔹 Share report (share link)
@@ -75,6 +98,22 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
             );
         });
     }
+
+    private void toggleSelection(int position) {
+        if (selectedItems.get(position, false)) {
+            selectedItems.delete(position);
+            selectedReports.remove(reports.get(position));
+        } else {
+            selectedItems.put(position, true);
+            selectedReports.add(reports.get(position));
+        }
+        notifyItemChanged(position);
+    }
+
+    public List<Report> getSelectedReports() {
+        return selectedReports;
+    }
+
 
     @Override
     public int getItemCount() {
@@ -122,6 +161,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         TextView tvDate, tvType, tvNotes;
         Button btnViewReport;
         ImageButton btnShareSingle;
+        CardView cardView;
 
         public ReportViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -130,11 +170,13 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
             tvNotes = itemView.findViewById(R.id.tvNotes);
             btnViewReport = itemView.findViewById(R.id.btnViewReport);
             btnShareSingle = itemView.findViewById(R.id.btnShareSingle);
+            cardView = itemView.findViewById(R.id.cardView);
         }
     }
 
     // 🔹 Click callback
     public interface OnReportClickListener {
-        void onClick(Report report);
+        void onViewReportClick(Report report);
+        void onItemClick(Report report);
     }
 }
