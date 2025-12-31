@@ -32,7 +32,6 @@ public class AiChatActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private ChatAdapter chatAdapter;
     private List<ChatMessage> chatMessages;
-    private ArrayList<String> fileUrls;
     private GenerativeModel gm;
     private Executor executor = Executors.newSingleThreadExecutor();
 
@@ -51,14 +50,12 @@ public class AiChatActivity extends AppCompatActivity {
         rvChatMessages.setLayoutManager(new LinearLayoutManager(this));
         rvChatMessages.setAdapter(chatAdapter);
 
-        fileUrls = getIntent().getStringArrayListExtra("fileUrls");
-
         btnSend.setOnClickListener(v -> {
             String userQuestion = etMessage.getText().toString().trim();
             if (!userQuestion.isEmpty()) {
                 addMessage(new ChatMessage(userQuestion, true));
                 etMessage.setText("");
-                callGeminiApi(fileUrls, userQuestion);
+                callGeminiApi(userQuestion);
             }
         });
 
@@ -66,15 +63,13 @@ public class AiChatActivity extends AppCompatActivity {
 
     }
 
-    private void callGeminiApi(List<String> fileUrls, String userQuestion) {
+    private void callGeminiApi(String userQuestion) {
         progressBar.setVisibility(View.VISIBLE);
 
         GenerativeModelFutures model = GenerativeModelFutures.from(gm);
 
-        // TODO: Replace with actual file content extraction
-        String hardcodedText = "This is a placeholder for the extracted text from the reports.";
         Content content = new Content.Builder()
-                .addText("Given the following medical reports: " + hardcodedText + "\n\nAnd the user\'s question: " + userQuestion)
+                .addText("You are a medical expert. Only answer medical-related questions. If the question is not medical, say you cannot answer. The user's question is: " + userQuestion)
                 .build();
 
         ListenableFuture<GenerateContentResponse> response = model.generateContent(content);
