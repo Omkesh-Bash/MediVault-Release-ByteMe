@@ -20,6 +20,9 @@ import com.google.ai.client.generativeai.type.GenerateContentResponse;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -45,6 +48,7 @@ public class AiChatActivity extends AppCompatActivity {
     private Executor executor = Executors.newSingleThreadExecutor();
     private SharedPreferences sharedPreferences;
     private Gson gson = new Gson();
+    private String userName, userAge, userGender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,8 @@ public class AiChatActivity extends AppCompatActivity {
         chatAdapter = new ChatAdapter(chatMessages);
         rvChatMessages.setLayoutManager(new LinearLayoutManager(this));
         rvChatMessages.setAdapter(chatAdapter);
+
+        fetchUserDetails();
 
         btnSend.setOnClickListener(v -> {
             String userQuestion = etMessage.getText().toString().trim();
@@ -84,6 +90,25 @@ public class AiChatActivity extends AppCompatActivity {
 
     }
 
+    private void fetchUserDetails() {
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseFirestore.getInstance().collection("users").document(uid).get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            userName = document.getString("name");
+                            userAge = document.getString("age");
+                            userGender = document.getString("gender");
+                        } else {
+                            Toast.makeText(this, "User data not found", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(this, "Failed to fetch user data", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
     private void callGeminiApi() {
         progressBar.setVisibility(View.VISIBLE);
 
@@ -91,6 +116,10 @@ public class AiChatActivity extends AppCompatActivity {
 
         Content.Builder contentBuilder = new Content.Builder()
                 .addText("You are a medical expert. Only answer medical-related questions. If the question is not medical, say you cannot answer.");
+
+        if (userName != null && userAge != null && userGender != null) {
+            contentBuilder.addText("My name is " + userName + ", I am a " + userAge + " year old " + userGender + ".");
+        }
 
         // Add previous messages to the history
         for (ChatMessage chatMessage : chatMessages) {
