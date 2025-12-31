@@ -18,8 +18,7 @@
             android:textStyle="bold"
             android:textColor="#1E88E5"
             android:layout_gravity="center_horizontal"
-            android:paddingBottom="24dp"
-            />
+            android:paddingBottom="24dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,6 +69,16 @@
                 android:background="@drawable/edit_text_bg"
                 android:textSize="16sp"
                 android:layout_marginTop="12dp"/>
+
+            <!-- 🔴 ROLE SELECTION ADDED -->
+            <Spinner
+                android:id="@+id/spinnerRole"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_bg"
+                android:spinnerMode="dropdown"/>
 
             <Spinner
                 android:id="@+id/spinnerGender"

@@ -18,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     ImageView logoImage;
     TextView tvCreateAccount;
+
     FirebaseAuth auth;
 
     @Override
@@ -25,43 +26,43 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize UI components
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         logoImage = findViewById(R.id.logoImage);
-        tvCreateAccount = findViewById(R.id.tvCreateAccount); // new
+        tvCreateAccount = findViewById(R.id.tvCreateAccount);
 
-        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance();
 
-        // Login button click
         btnLogin.setOnClickListener(v -> {
+
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Enter email and password", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            // Firebase login
             auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
+
                         if (task.isSuccessful()) {
-                            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            // 🔥 AUTH SUCCESS — ALWAYS GO TO HOME
                             startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                             finish();
                         } else {
-                            Toast.makeText(this, "Login Failed: " + task.getException().getMessage(),
-                                    Toast.LENGTH_LONG).show();
+                            Toast.makeText(
+                                    this,
+                                    "Login Failed: " + task.getException().getMessage(),
+                                    Toast.LENGTH_LONG
+                            ).show();
                         }
                     });
         });
 
-        // Redirect to SignUpActivity
-        tvCreateAccount.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, SignupActivity.class));
-        });
+        tvCreateAccount.setOnClickListener(v ->
+                startActivity(new Intent(this, SignupActivity.class))
+        );
     }
 }

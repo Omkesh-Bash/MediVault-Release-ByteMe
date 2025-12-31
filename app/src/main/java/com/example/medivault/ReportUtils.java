@@ -1,7 +1,5 @@
 package com.example.medivault;
 
-import androidx.annotation.NonNull;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -11,27 +9,15 @@ import java.util.List;
 
 public class ReportUtils {
 
-    // 🔹 Save report metadata to Firestore
-    public static void saveReportToCloud(Report report,
-                                         OnReportSavedListener listener) {
-
-        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        db.collection("users")
-                .document(uid)
-                .collection("reports")
-                .add(report)
-                .addOnSuccessListener(docRef -> {
-                    if (listener != null) listener.onSuccess();
-                })
-                .addOnFailureListener(e -> {
-                    if (listener != null) listener.onFailure(e);
-                });
-    }
-
-    // 🔹 Fetch all reports of current user
+    // 🔹 Fetch all reports of current user (CRASH-PROOF)
     public static void fetchReportsFromCloud(OnReportsFetchedListener listener) {
+
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            if (listener != null) {
+                listener.onError(new Exception("User not logged in"));
+            }
+            return;
+        }
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -45,21 +31,34 @@ public class ReportUtils {
                     List<Report> reports = new ArrayList<>();
 
                     for (QueryDocumentSnapshot doc : querySnapshot) {
+
                         Report report = doc.toObject(Report.class);
+                        if (report == null) continue;
+
+                        // 🔑 ALWAYS set document ID
+                        report.id = doc.getId();
+
+                        // 🔐 NULL-SAFETY (VERY IMPORTANT)
+                        if (report.title == null) report.title = "";
+                        if (report.type == null) report.type = "";
+                        if (report.date == null) report.date = "";
+                        if (report.fileUrl == null) report.fileUrl = "";
+
                         reports.add(report);
                     }
 
-                    listener.onFetched(reports);
+                    if (listener != null) {
+                        listener.onFetched(reports);
+                    }
                 })
-                .addOnFailureListener(listener::onError);
+                .addOnFailureListener(e -> {
+                    if (listener != null) {
+                        listener.onError(e);
+                    }
+                });
     }
 
-    // 🔹 Interfaces for callbacks
-    public interface OnReportSavedListener {
-        void onSuccess();
-        void onFailure(Exception e);
-    }
-
+    // 🔹 Interfaces
     public interface OnReportsFetchedListener {
         void onFetched(List<Report> reports);
         void onError(Exception e);

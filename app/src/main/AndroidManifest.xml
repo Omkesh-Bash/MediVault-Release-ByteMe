@@ -44,6 +44,10 @@
         <activity android:name=".EmergencyActivity" />
         <activity android:name=".ViewReportActivity" />
         <activity android:name=".AiChatActivity" />
+        <activity android:name=".DoctorHomeActivity" />
+        <activity android:name=".DoctorInboxActivity"
+            android:exported="false" />
+
 
     </application>
 

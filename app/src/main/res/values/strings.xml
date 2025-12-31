@@ -34,5 +34,12 @@
         <item>O+</item>
         <item>O-</item>
     </string-array>
+
+    <string-array name="roles">
+        <item>Select Role</item>
+        <item>User</item>
+        <item>Doctor</item>
+    </string-array>
+
 </resources>
 

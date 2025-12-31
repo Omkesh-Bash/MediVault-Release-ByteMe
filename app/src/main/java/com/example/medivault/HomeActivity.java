@@ -2,69 +2,120 @@ package com.example.medivault;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HomeActivity extends AppCompatActivity {
 
     CardView cardProfile, cardUpload, cardMyReports, cardEmergency;
+    ImageView ivDoctorNotifications;
+    TextView tvNotificationCount;
+
     FirebaseAuth auth;
+    FirebaseFirestore firestore;
+    String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Initialize Firebase
-        FirebaseApp.initializeApp(this); // This fixes the crash
-
-        // Firebase auth instance
+        FirebaseApp.initializeApp(this);
         auth = FirebaseAuth.getInstance();
+        firestore = FirebaseFirestore.getInstance();
 
-        // If user not logged in, redirect to login
         if (auth.getCurrentUser() == null) {
-            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
             finish();
             return;
         }
 
-        // Initialize cards
+        uid = auth.getCurrentUser().getUid();
+
+        // Cards
         cardProfile = findViewById(R.id.card_profile);
         cardUpload = findViewById(R.id.card_upload);
         cardMyReports = findViewById(R.id.card_my_reports);
         cardEmergency = findViewById(R.id.card_emergency);
 
-        // Card click listeners
-        cardProfile.setOnClickListener(v -> {
-            Toast.makeText(HomeActivity.this, "Opening Profile", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
-        });
+        // Notification views
+        ivDoctorNotifications = findViewById(R.id.ivDoctorNotifications);
+        tvNotificationCount = findViewById(R.id.tvNotificationCount);
 
-        cardUpload.setOnClickListener(v -> {
-            Toast.makeText(HomeActivity.this, "Upload Reports", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(HomeActivity.this, UploadReportActivity.class));
-        });
+        if (ivDoctorNotifications != null) ivDoctorNotifications.setVisibility(View.GONE);
+        if (tvNotificationCount != null) tvNotificationCount.setVisibility(View.GONE);
 
-        cardMyReports.setOnClickListener(v -> {
-            Toast.makeText(HomeActivity.this, "Viewing My Reports", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(HomeActivity.this, MyReportsActivity.class));
-        });
+        // 🔹 Check role
+        firestore.collection("users")
+                .document(uid)
+                .get()
+                .addOnSuccessListener(doc -> {
+                    if (!doc.exists()) return;
 
-        cardEmergency.setOnClickListener(v -> {
-            Toast.makeText(HomeActivity.this, "Emergency Info", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(HomeActivity.this, EmergencyActivity.class));
-        });
+                    String role = doc.getString("role");
+                    if (!"doctor".equals(role)) return;
+
+                    if (ivDoctorNotifications != null) {
+                        ivDoctorNotifications.setVisibility(View.VISIBLE);
+                    }
+
+                    updateNotificationBadge(); // 🔔 INITIAL LOAD
+                });
+
+        // Navigation (same for all users)
+        cardProfile.setOnClickListener(v ->
+                startActivity(new Intent(this, ProfileActivity.class)));
+
+        cardUpload.setOnClickListener(v ->
+                startActivity(new Intent(this, UploadReportActivity.class)));
+
+        cardMyReports.setOnClickListener(v ->
+                startActivity(new Intent(this, MyReportsActivity.class)));
+
+        cardEmergency.setOnClickListener(v ->
+                startActivity(new Intent(this, EmergencyActivity.class)));
+
+        if (ivDoctorNotifications != null) {
+            ivDoctorNotifications.setOnClickListener(v ->
+                    startActivity(new Intent(this, DoctorInboxActivity.class)));
+        }
     }
 
-    // Optional: Logout function
-    private void logout() {
-        auth.signOut();
-        startActivity(new Intent(HomeActivity.this, LoginActivity.class));
-        finish();
+    // 🔄 VERY IMPORTANT — refresh badge after returning
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateNotificationBadge();
+    }
+
+    // 🔔 UNREAD COUNT LOGIC (REUSABLE)
+    private void updateNotificationBadge() {
+
+        if (tvNotificationCount == null || uid == null) return;
+
+        firestore.collection("users")
+                .document(uid)
+                .collection("received_reports")
+                .whereEqualTo("read", false)
+                .get()
+                .addOnSuccessListener(snapshot -> {
+
+                    int count = snapshot.size();
+
+                    if (count > 0) {
+                        tvNotificationCount.setText(String.valueOf(count));
+                        tvNotificationCount.setVisibility(View.VISIBLE);
+                    } else {
+                        tvNotificationCount.setVisibility(View.GONE);
+                    }
+                });
     }
 }
