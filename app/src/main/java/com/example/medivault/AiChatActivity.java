@@ -1,5 +1,6 @@
 package com.example.medivault;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -18,13 +19,19 @@ import com.google.ai.client.generativeai.type.GenerateContentResponse;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class AiChatActivity extends AppCompatActivity {
+
+    private static final String PREFS_NAME = "ChatHistory";
+    private static final String CHAT_HISTORY_KEY = "chat_history";
 
     private RecyclerView rvChatMessages;
     private EditText etMessage;
@@ -34,6 +41,8 @@ public class AiChatActivity extends AppCompatActivity {
     private List<ChatMessage> chatMessages;
     private GenerativeModel gm;
     private Executor executor = Executors.newSingleThreadExecutor();
+    private SharedPreferences sharedPreferences;
+    private Gson gson = new Gson();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +54,9 @@ public class AiChatActivity extends AppCompatActivity {
         btnSend = findViewById(R.id.btn_send);
         progressBar = findViewById(R.id.progress_bar);
 
-        chatMessages = new ArrayList<>();
+        sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        loadChatHistory();
+
         chatAdapter = new ChatAdapter(chatMessages);
         rvChatMessages.setLayoutManager(new LinearLayoutManager(this));
         rvChatMessages.setAdapter(chatAdapter);
@@ -55,7 +66,7 @@ public class AiChatActivity extends AppCompatActivity {
             if (!userQuestion.isEmpty()) {
                 addMessage(new ChatMessage(userQuestion, true));
                 etMessage.setText("");
-                callGeminiApi(userQuestion);
+                callGeminiApi();
             }
         });
 
@@ -63,16 +74,21 @@ public class AiChatActivity extends AppCompatActivity {
 
     }
 
-    private void callGeminiApi(String userQuestion) {
+    private void callGeminiApi() {
         progressBar.setVisibility(View.VISIBLE);
 
         GenerativeModelFutures model = GenerativeModelFutures.from(gm);
 
-        Content content = new Content.Builder()
-                .addText("You are a medical expert. Only answer medical-related questions. If the question is not medical, say you cannot answer. The user's question is: " + userQuestion)
-                .build();
+        Content.Builder contentBuilder = new Content.Builder()
+//                .addText("You are a medical expert. Only answer medical-related questions. If the question is not medical, say you cannot answer.");
+                .addText("You are my lover");
 
-        ListenableFuture<GenerateContentResponse> response = model.generateContent(content);
+        // Add previous messages to the history
+        for (ChatMessage chatMessage : chatMessages) {
+            contentBuilder.addText((chatMessage.isUser() ? "User: " : "Model: ") + chatMessage.getMessage());
+        }
+
+        ListenableFuture<GenerateContentResponse> response = model.generateContent(contentBuilder.build());
         Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
             @Override
             public void onSuccess(GenerateContentResponse result) {
@@ -97,6 +113,22 @@ public class AiChatActivity extends AppCompatActivity {
             chatMessages.add(message);
             chatAdapter.notifyItemInserted(chatMessages.size() - 1);
             rvChatMessages.scrollToPosition(chatMessages.size() - 1);
+            saveChatHistory();
         });
+    }
+
+    private void saveChatHistory() {
+        String json = gson.toJson(chatMessages);
+        sharedPreferences.edit().putString(CHAT_HISTORY_KEY, json).apply();
+    }
+
+    private void loadChatHistory() {
+        String json = sharedPreferences.getString(CHAT_HISTORY_KEY, null);
+        if (json != null) {
+            Type type = new TypeToken<ArrayList<ChatMessage>>() {}.getType();
+            chatMessages = gson.fromJson(json, type);
+        } else {
+            chatMessages = new ArrayList<>();
+        }
     }
 }
