@@ -3,6 +3,7 @@ package com.example.medivault;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -36,6 +37,7 @@ public class AiChatActivity extends AppCompatActivity {
     private RecyclerView rvChatMessages;
     private EditText etMessage;
     private ImageButton btnSend;
+    private Button btnDeleteHistory;
     private ProgressBar progressBar;
     private ChatAdapter chatAdapter;
     private List<ChatMessage> chatMessages;
@@ -52,6 +54,7 @@ public class AiChatActivity extends AppCompatActivity {
         rvChatMessages = findViewById(R.id.rv_chat_messages);
         etMessage = findViewById(R.id.et_message);
         btnSend = findViewById(R.id.btn_send);
+        btnDeleteHistory = findViewById(R.id.btn_delete_history);
         progressBar = findViewById(R.id.progress_bar);
 
         sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
@@ -70,6 +73,13 @@ public class AiChatActivity extends AppCompatActivity {
             }
         });
 
+        btnDeleteHistory.setOnClickListener(v -> {
+            chatMessages.clear();
+            chatAdapter.notifyDataSetChanged();
+            saveChatHistory();
+            Toast.makeText(this, "Chat history cleared", Toast.LENGTH_SHORT).show();
+        });
+
         gm = new GenerativeModel("gemini-flash-latest", "AIzaSyChY5NkCe1Pa6V21JI1yToH1z-Nb2hq-eA");
 
     }
@@ -80,8 +90,7 @@ public class AiChatActivity extends AppCompatActivity {
         GenerativeModelFutures model = GenerativeModelFutures.from(gm);
 
         Content.Builder contentBuilder = new Content.Builder()
-//                .addText("You are a medical expert. Only answer medical-related questions. If the question is not medical, say you cannot answer.");
-                .addText("You are my lover");
+                .addText("You are a medical expert. Only answer medical-related questions. If the question is not medical, say you cannot answer.");
 
         // Add previous messages to the history
         for (ChatMessage chatMessage : chatMessages) {
