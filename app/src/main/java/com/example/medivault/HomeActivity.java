@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HomeActivity extends AppCompatActivity {
 
-    CardView cardProfile, cardUpload, cardMyReports, cardEmergency;
+    CardView cardProfile, cardUpload, cardMyReports, cardEmergency, cardAiChat;
     ImageView ivDoctorNotifications;
     TextView tvNotificationCount;
 
@@ -45,6 +45,7 @@ public class HomeActivity extends AppCompatActivity {
         cardUpload = findViewById(R.id.card_upload);
         cardMyReports = findViewById(R.id.card_my_reports);
         cardEmergency = findViewById(R.id.card_emergency);
+        cardAiChat = findViewById(R.id.card_ai_chat);
 
         // Notification views
         ivDoctorNotifications = findViewById(R.id.ivDoctorNotifications);
@@ -82,6 +83,9 @@ public class HomeActivity extends AppCompatActivity {
 
         cardEmergency.setOnClickListener(v ->
                 startActivity(new Intent(this, EmergencyActivity.class)));
+
+        cardAiChat.setOnClickListener(v ->
+                startActivity(new Intent(this, AiChatActivity.class)));
 
         if (ivDoctorNotifications != null) {
             ivDoctorNotifications.setOnClickListener(v ->

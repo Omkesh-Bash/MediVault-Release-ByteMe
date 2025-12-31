@@ -31,7 +31,7 @@
             android:id="@+id/tvNotificationCount"
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:layout_gravity="end|top"
+            android.layout_gravity="end|top"
             android:background="@drawable/badge_red_circle"
             android:text="0"
             android:textColor="@android:color/white"
@@ -149,6 +149,35 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="📑 My Reports"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- AI Chat -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_ai_chat"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginBottom="16dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                card_view:cardCornerRadius="20dp"
+                card_view:cardElevation="8dp"
+                android:backgroundTint="#1976D2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🤖 AI Chat"
                         android:textSize="22sp"
                         android:textStyle="bold"
                         android:textColor="@android:color/white" />
