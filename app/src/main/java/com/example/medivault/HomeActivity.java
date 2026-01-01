@@ -3,6 +3,7 @@ package com.example.medivault;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,10 +16,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HomeActivity extends AppCompatActivity {
 
+    // Views
+    TextView tvWelcome, tvNotificationCount;
     CardView cardProfile, cardUpload, cardMyReports, cardEmergency, cardAiChat;
+    FrameLayout layoutNotification;
     ImageView ivDoctorNotifications;
-    TextView tvNotificationCount;
 
+    // Firebase
     FirebaseAuth auth;
     FirebaseFirestore firestore;
     String uid;
@@ -28,92 +32,91 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // Initialize Firebase
         FirebaseApp.initializeApp(this);
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
+        // Redirect to login if not authenticated
         if (auth.getCurrentUser() == null) {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
             return;
         }
-
         uid = auth.getCurrentUser().getUid();
 
-        // Cards
+        // Initialize Views
+        initViews();
+
+        // Set up listeners
+        setupClickListeners();
+
+        // Fetch user data and configure UI based on role
+        fetchUserData();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Refresh notification badge when returning to the activity
+        updateNotificationBadge();
+    }
+
+    private void initViews() {
+        tvWelcome = findViewById(R.id.tv_welcome);
+        tvNotificationCount = findViewById(R.id.tvNotificationCount);
+
         cardProfile = findViewById(R.id.card_profile);
         cardUpload = findViewById(R.id.card_upload);
         cardMyReports = findViewById(R.id.card_my_reports);
         cardEmergency = findViewById(R.id.card_emergency);
         cardAiChat = findViewById(R.id.card_ai_chat);
 
-        // Notification views
+        layoutNotification = findViewById(R.id.layoutNotification);
         ivDoctorNotifications = findViewById(R.id.ivDoctorNotifications);
-        tvNotificationCount = findViewById(R.id.tvNotificationCount);
 
-        if (ivDoctorNotifications != null) ivDoctorNotifications.setVisibility(View.GONE);
-        if (tvNotificationCount != null) tvNotificationCount.setVisibility(View.GONE);
-
-        // 🔹 Check role
-        firestore.collection("users")
-                .document(uid)
-                .get()
-                .addOnSuccessListener(doc -> {
-                    if (!doc.exists()) return;
-
-                    String role = doc.getString("role");
-                    if (!"doctor".equals(role)) return;
-
-                    if (ivDoctorNotifications != null) {
-                        ivDoctorNotifications.setVisibility(View.VISIBLE);
-                    }
-
-                    updateNotificationBadge(); // 🔔 INITIAL LOAD
-                });
-
-        // Navigation (same for all users)
-        cardProfile.setOnClickListener(v ->
-                startActivity(new Intent(this, ProfileActivity.class)));
-
-        cardUpload.setOnClickListener(v ->
-                startActivity(new Intent(this, UploadReportActivity.class)));
-
-        cardMyReports.setOnClickListener(v ->
-                startActivity(new Intent(this, MyReportsActivity.class)));
-
-        cardEmergency.setOnClickListener(v ->
-                startActivity(new Intent(this, EmergencyActivity.class)));
-
-        cardAiChat.setOnClickListener(v ->
-                startActivity(new Intent(this, AiChatActivity.class)));
-
-        if (ivDoctorNotifications != null) {
-            ivDoctorNotifications.setOnClickListener(v ->
-                    startActivity(new Intent(this, DoctorInboxActivity.class)));
-        }
+        // Initially hide notification bell
+        layoutNotification.setVisibility(View.GONE);
     }
 
-    // 🔄 VERY IMPORTANT — refresh badge after returning
-    @Override
-    protected void onResume() {
-        super.onResume();
-        updateNotificationBadge();
+    private void setupClickListeners() {
+        cardProfile.setOnClickListener(v -> startActivity(new Intent(this, ProfileActivity.class)));
+        cardUpload.setOnClickListener(v -> startActivity(new Intent(this, UploadReportActivity.class)));
+        cardMyReports.setOnClickListener(v -> startActivity(new Intent(this, MyReportsActivity.class)));
+        cardEmergency.setOnClickListener(v -> startActivity(new Intent(this, EmergencyActivity.class)));
+        cardAiChat.setOnClickListener(v -> startActivity(new Intent(this, AiChatActivity.class)));
+
+        layoutNotification.setOnClickListener(v -> startActivity(new Intent(this, DoctorInboxActivity.class)));
     }
 
-    // 🔔 UNREAD COUNT LOGIC (REUSABLE)
+    private void fetchUserData() {
+        firestore.collection("users").document(uid).get().addOnSuccessListener(doc -> {
+            if (doc.exists()) {
+                String name = doc.getString("name");
+                String role = doc.getString("role");
+
+                // Set personalized welcome message
+                if (name != null && !name.isEmpty()) {
+                    tvWelcome.setText("Hi, " + name + "!");
+                }
+
+                // Show notifications for doctors
+                if ("doctor".equals(role)) {
+                    layoutNotification.setVisibility(View.VISIBLE);
+                    updateNotificationBadge();
+                }
+            }
+        });
+    }
+
     private void updateNotificationBadge() {
+        if (uid == null) return;
 
-        if (tvNotificationCount == null || uid == null) return;
-
-        firestore.collection("users")
-                .document(uid)
-                .collection("received_reports")
+        firestore.collection("users").document(uid).collection("received_reports")
                 .whereEqualTo("read", false)
                 .get()
                 .addOnSuccessListener(snapshot -> {
-
                     int count = snapshot.size();
-
                     if (count > 0) {
                         tvNotificationCount.setText(String.valueOf(count));
                         tvNotificationCount.setVisibility(View.VISIBLE);

@@ -3,13 +3,14 @@ package com.example.medivault;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -18,9 +19,10 @@ import java.util.Map;
 
 public class SignupActivity extends AppCompatActivity {
 
-    EditText etName, etEmail, etPassword, etAge, etEmergency;
-    Spinner spinnerBloodGroup, spinnerGender, spinnerRole;
+    TextInputEditText etName, etEmail, etPassword, etAge, etEmergency;
+    AutoCompleteTextView spinnerRole, spinnerGender, spinnerBloodGroup;
     Button btnSignup;
+    TextView tvLogin;
 
     FirebaseAuth auth;
     FirebaseFirestore firestore;
@@ -35,11 +37,12 @@ public class SignupActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         etAge = findViewById(R.id.etAge);
-        spinnerRole = findViewById(R.id.spinnerRole);      // 🔴 NEW
+        spinnerRole = findViewById(R.id.spinnerRole);
         spinnerGender = findViewById(R.id.spinnerGender);
         spinnerBloodGroup = findViewById(R.id.spinnerBloodGroup);
         etEmergency = findViewById(R.id.etEmergency);
         btnSignup = findViewById(R.id.btnSignup);
+        tvLogin = findViewById(R.id.tvLogin);
 
         // Role spinner
         ArrayAdapter<CharSequence> roleAdapter = ArrayAdapter.createFromResource(
@@ -77,9 +80,9 @@ public class SignupActivity extends AppCompatActivity {
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
             String age = etAge.getText().toString().trim();
-            String roleSelected = spinnerRole.getSelectedItem().toString();
-            String gender = spinnerGender.getSelectedItem().toString();
-            String bloodGroup = spinnerBloodGroup.getSelectedItem().toString();
+            String roleSelected = spinnerRole.getText().toString();
+            String gender = spinnerGender.getText().toString();
+            String bloodGroup = spinnerBloodGroup.getText().toString();
             String emergency = etEmergency.getText().toString().trim();
 
             // Validation
@@ -89,13 +92,12 @@ public class SignupActivity extends AppCompatActivity {
                 return;
             }
 
-            if (spinnerRole.getSelectedItemPosition() == 0) {
+            if (roleSelected.isEmpty() || roleSelected.equals("Select Role")) {
                 Toast.makeText(this, "Please select a role", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            if (spinnerGender.getSelectedItemPosition() == 0 ||
-                    spinnerBloodGroup.getSelectedItemPosition() == 0) {
+            if (gender.isEmpty() || gender.equals("Select Gender") || bloodGroup.isEmpty() || bloodGroup.equals("Select Blood Group")) {
                 Toast.makeText(this, "Please select valid options", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -150,6 +152,10 @@ public class SignupActivity extends AppCompatActivity {
                                     Toast.LENGTH_LONG).show();
                         }
                     });
+        });
+
+        tvLogin.setOnClickListener(v -> {
+            startActivity(new Intent(this, LoginActivity.class));
         });
     }
 }
