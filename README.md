@@ -167,7 +167,7 @@ Please open issues for bugs or feature requests with steps to reproduce.
 
 ## License & contact
 - License: Add a LICENSE file to this repository to declare the license you want to use (MIT, Apache-2.0, etc.).
-- Author / Contact: Omkesh-Bash — see repository owner on GitHub.
+- Author / Contact: ByteMe Team — see repository owner on GitHub.
 
 ---
 
