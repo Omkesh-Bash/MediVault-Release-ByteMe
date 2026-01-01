@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="blood_groups">
+        <item>Select Blood Group</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+    <string-array name="genders">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="roles">
+        <item>Select Role</item>
+        <item>User</item>
+        <item>Doctor</item>
+    </string-array>
+    <color name="accentColor">#FFC107</color>
+    <color name="backgroundColor">#FAFAFA</color>
+    <color name="hintColor">#757575</color>
+    <color name="mv_accent">#4CAF50</color>
+    <color name="mv_bg">#F5F9FF</color>
+    <color name="mv_error">#E53935</color>
+    <color name="mv_primary">#1976D2</color>
+    <color name="mv_primary_light">#64B5F6</color>
+    <color name="mv_subtext">#777777</color>
+    <color name="mv_text">#333333</color>
+    <color name="primaryColor">#4CAF50</color>
+    <color name="primaryDarkColor">#388E3C</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="textColor">#212121</color>
+    <color name="white">#FFFFFF</color>
+    <item name="btn_download" type="id"/>
+    <item name="btn_view" type="id"/>
+    <item name="tv_report_date" type="id"/>
+    <item name="tv_report_type" type="id"/>
+    <string name="Email">Email</string>
+    <string name="Login">Login</string>
+    <string name="Password">Password</string>
+    <string name="Sign_up">Sign Up</string>
+    <string name="age">Age</string>
+    <string name="allergies">Allergies</string>
+    <string name="app_name">MediVault+</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="create_account">Create Account</string>
+    <string name="doctor_contact_no">Doctor Contact No.</string>
+    <string name="don_t_have_an_account_sign_up">Don’t have an account? Sign up</string>
+    <string name="email">Email</string>
+    <string name="emergency_contact">Emergency Contact</string>
+    <string name="emergency_contact_no">Emergency Contact No.</string>
+    <string name="emergency_information">Emergency Information</string>
+    <string name="gcm_defaultSenderId" translatable="false">926533680473</string>
+    <string name="get_started">Get Started</string>
+    <string name="google_api_key" translatable="false">AIzaSyCdTMvadYO98ZvOwQVDO2B_yThnEUJvtdM</string>
+    <string name="google_app_id" translatable="false">1:926533680473:android:45fda5933924548d962048</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCdTMvadYO98ZvOwQVDO2B_yThnEUJvtdM</string>
+    <string name="google_storage_bucket" translatable="false">medivaultplus-5ef56.firebasestorage.app</string>
+    <string name="login">Login</string>
+    <string name="logo">Logo</string>
+    <string name="mail">Email</string>
+    <string name="medivault">"
+</string>
+    <string name="password">Password</string>
+    <string name="project_id" translatable="false">medivaultplus-5ef56</string>
+    <string name="register">Register</string>
+    <string name="save_emergency_info">Save Emergency Info</string>
+    <string name="search_hint">Search by type/doctor/date</string>
+    <string name="signup">Signup</string>
+    <string name="upload_report">Upload Report</string>
+    <string name="user_name">Name</string>
+    <style name="RoundedButton" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+    <style name="RoundedEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="Theme.Medivault" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryContainer">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        
+
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryContainer</item>
+    </style>
+</resources>

@@ -1,0 +1,270 @@
+[
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_badge_red_circle.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/badge_red_circle.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.medivault.app-main-47:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_signup.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_signup.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_bg_outlined.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/bg_outlined.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_item_chat_ai.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/item_chat_ai.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_description.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_description.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_bg_ai_message.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/bg_ai_message.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_notifications.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_notifications.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_button_sos_bg.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/button_sos_bg.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_item_doctor.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/item_doctor.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_badge_bg.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/badge_bg.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.medivault.app-main-47:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.medivault.app-main-47:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_button_bg_login.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/button_bg_login.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/anim_fade_in_out.xml.flat",
+        "source": "com.example.medivault.app-main-47:/anim/fade_in_out.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.medivault.app-main-47:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_splash.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_edittext_bg.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/edittext_bg.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_button_bg.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/button_bg.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_bg_primary_btn.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/bg_primary_btn.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.medivault.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.medivault.app-main-47:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_ai_chat.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_ai_chat.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_bg_gradient.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/bg_gradient.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_doctor_verification.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_doctor_verification.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_note.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_note.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_my_reports.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_my_reports.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.medivault.app-main-47:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_edit_text_bg.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/edit_text_bg.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_view_report.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_view_report.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.medivault.app-main-47:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_upload.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_upload.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_rounded_teal_button.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/rounded_teal_button.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/xml_file_paths.xml.flat",
+        "source": "com.example.medivault.app-main-47:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_login.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_bg_user_message.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/bg_user_message.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_emergency.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_emergency.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_dialog_doctor_select.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/dialog_doctor_select.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.medivault.app-main-47:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_calendar_today.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_calendar_today.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_delete.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_delete.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_home.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_emergency_header_bg.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/emergency_header_bg.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_doctor_home.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_doctor_home.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/xml_backup_rules.xml.flat",
+        "source": "com.example.medivault.app-main-47:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.medivault.app-main-47:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_person.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_person.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.medivault.app-main-47:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable-anydpi_ic_launcher.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_item_chat_user.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/item_chat_user.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_send.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_send.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_card_bg.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/card_bg.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_bg_card.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/bg_card.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_send_button_background.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/send_button_background.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_chat_input_background.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/chat_input_background.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_emergency_lock.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_emergency_lock.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_profile.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_search.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_search.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_ai_chat.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_ai_chat.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_button_emergency_bg.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/button_emergency_bg.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_item_report.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/item_report.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_share.xml.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_share.xml"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/drawable_ic_medical_logo.jpg.flat",
+        "source": "com.example.medivault.app-main-47:/drawable/ic_medical_logo.jpg"
+    },
+    {
+        "merged": "com.example.medivault.app-debug-45:/layout_activity_doctor_inbox.xml.flat",
+        "source": "com.example.medivault.app-main-47:/layout/activity_doctor_inbox.xml"
+    }
+]
