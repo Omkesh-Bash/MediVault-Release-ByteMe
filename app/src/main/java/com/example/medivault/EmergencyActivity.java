@@ -3,8 +3,10 @@ package com.example.medivault;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +16,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class EmergencyActivity extends AppCompatActivity {
 
-    EditText etBloodGroup, etAllergies, etEmergencyContact, etDoctorContact;
+    Spinner spinnerBloodGroup;
+    EditText etAllergies, etEmergencyContact, etDoctorContact;
     Button btnSaveEmergency;
 
     // Base pref name; actual name may include user uid
@@ -27,7 +30,7 @@ public class EmergencyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency);
 
-        etBloodGroup = findViewById(R.id.etBloodGroup);
+        spinnerBloodGroup = findViewById(R.id.spinnerBloodGroup);
         etAllergies = findViewById(R.id.etAllergies);
         etEmergencyContact = findViewById(R.id.etEmergencyContact);
         etDoctorContact = findViewById(R.id.etDoctorContact);
@@ -44,7 +47,7 @@ public class EmergencyActivity extends AppCompatActivity {
     }
 
     private void saveEmergencyInfo() {
-        String blood = etBloodGroup.getText().toString().trim();
+        String blood = spinnerBloodGroup.getSelectedItem().toString();
         String allergy = etAllergies.getText().toString().trim();
         String emergencyContact = etEmergencyContact.getText().toString().trim();
         String doctorContact = etDoctorContact.getText().toString().trim();
@@ -70,7 +73,12 @@ public class EmergencyActivity extends AppCompatActivity {
         String emergencyContact = sharedPreferences.getString("emergencyContact", "");
         String doctorContact = sharedPreferences.getString("doctorContact", "");
 
-        etBloodGroup.setText(blood);
+        if (!blood.isEmpty()) {
+            ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) spinnerBloodGroup.getAdapter();
+            int position = adapter.getPosition(blood);
+            spinnerBloodGroup.setSelection(position);
+        }
+
         etAllergies.setText(allergy);
         etEmergencyContact.setText(emergencyContact);
         etDoctorContact.setText(doctorContact);

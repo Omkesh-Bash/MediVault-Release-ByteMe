@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_medical_logo"
         android:label="@string/app_name"
         android:name=".MyApp"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_medical_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Medivault"
         tools:targetApi="31">
@@ -44,6 +44,10 @@
         <activity android:name=".EmergencyActivity" />
         <activity android:name=".ViewReportActivity" />
         <activity android:name=".AiChatActivity" />
+        <activity android:name=".DoctorHomeActivity" />
+        <activity android:name=".DoctorInboxActivity"
+            android:exported="false" />
+
 
     </application>
 

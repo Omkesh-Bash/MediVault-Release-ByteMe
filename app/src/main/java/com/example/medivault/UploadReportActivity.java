@@ -116,10 +116,15 @@ public class UploadReportActivity extends AppCompatActivity {
         progressUpload.setVisibility(View.VISIBLE);
         progressUpload.setProgress(0);
 
+        String originalName = tvFileName.getText().toString();
+
         MediaManager.get()
                 .upload(fileUri)
-                .option("resource_type", "raw")           // for PDFs & docs
-                .unsigned("medivault_reports")            // preset ID (must match exactly)
+                .option("resource_type", "raw")
+                .option("use_filename", true)          // 🔥 KEEP ORIGINAL NAME
+                .option("unique_filename", false)      // 🔥 DO NOT RANDOMIZE
+                .option("filename_override", originalName) // 🔥 FORCE EXTENSION
+                .unsigned("medivault_reports")
                 .option("folder", "medivault/reports/" + uid)
                 .callback(new UploadCallback() {
 
@@ -139,7 +144,8 @@ public class UploadReportActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
 
-                        String fileUrl = resultData.get("secure_url").toString();
+                        String fileUrl = resultData.get("secure_url").toString()
+                                .replace("/upload/", "/upload/fl_attachment/");
 
                         Map<String, Object> report = new HashMap<>();
                         report.put("title", title);

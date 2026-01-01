@@ -6,23 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".AiChatActivity">
 
-    <TextView
-        android:id="@+id/tv_disclaimer"
+    <RelativeLayout
+        android:id="@+id/rl_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:background="@android:color/holo_red_light"
-        android:padding="8dp"
-        android:text="AI-generated insights are for informational purposes only and are not a substitute for professional medical advice. Always consult with a qualified healthcare provider."
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/tv_disclaimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/btn_delete_history"
+            android:background="@android:color/holo_red_light"
+            android:padding="8dp"
+            android:text="AI-generated insights are for informational purposes only and are not a substitute for professional medical advice. Always consult with a qualified healthcare provider."
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_delete_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="Delete History" />
+
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_chat_messages"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/ll_input"
-        android:layout_below="@+id/tv_disclaimer"
+        android:layout_below="@+id/rl_header"
         android:clipToPadding="false"
         android:padding="8dp" />
 
