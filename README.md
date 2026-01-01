@@ -10,8 +10,8 @@ A secure Android app to store, manage and share personal medical reports. MediVa
 ---
 
 ## Quick links
-- Download (recommended): Google Drive — https://drive.google.com/file/d/1EF3Thr7HHAErk8J6h6U0oYeXf6rr7MP-/view?usp=sharing
-- Raw APK (repo branch `files`): https://raw.githubusercontent.com/Omkesh-Bash/MediVault-Release-ByteMe/files/app/build/outputs/apk/debug/Final%20MediVault.apk
+- Download (recommended): Google Drive — https://drive.google.com/file/d/1EF3Thr7HHAErk8J6h6U0oYeXf6rr7MP-/view?usp=sharing  
+- Raw APK (repo branch `files`): https://raw.githubusercontent.com/Omkesh-Bash/MediVault-Release-ByteMe/files/app/build/outputs/apk/debug/Final%20MediVault.apk  
 - Project: https://github.com/Omkesh-Bash/MediVault-Release-ByteMe
 
 ---
@@ -49,12 +49,54 @@ MediVault is an Android application (Java) that acts as a personal vault for med
 ---
 
 ## Screenshots
-(Replace these with real screenshots inside `assets/screenshots/`.)
-- Home / Reports list
-- Upload report
-- View report
-- Doctor inbox & verification 
-- AI Chat
+
+Click any image to view the full-size file in the repository.
+
+<div style="display:flex; flex-wrap:wrap; gap:12px; align-items:flex-start;">
+
+  <div style="flex: 1 1 320px; max-width: 320px;">
+    <a href="assets/screenshots/home.png">
+      <img src="assets/screenshots/home.png" alt="Home — Reports list" width="320" style="border:1px solid #e1e4e8; border-radius:6px;" />
+    </a>
+    <p align="center"><em>Home — Reports list</em></p>
+  </div>
+
+  <div style="flex: 1 1 320px; max-width: 320px;">
+    <a href="assets/screenshots/doc_uploader.png">
+      <img src="assets/screenshots/doc_uploader.png" alt="Upload report" width="320" style="border:1px solid #e1e4e8; border-radius:6px;" />
+    </a>
+    <p align="center"><em>Upload report</em></p>
+  </div>
+
+  <div style="flex: 1 1 320px; max-width: 320px;">
+    <a href="assets/screenshots/saved_reports.png">
+      <img src="assets/screenshots/saved_reports.png" alt="Saved reports" width="320" style="border:1px solid #e1e4e8; border-radius:6px;" />
+    </a>
+    <p align="center"><em>Saved reports</em></p>
+  </div>
+
+  <div style="flex: 1 1 320px; max-width: 320px;">
+    <a href="assets/screenshots/profile.png">
+      <img src="assets/screenshots/profile.png" alt="Profile" width="320" style="border:1px solid #e1e4e8; border-radius:6px;" />
+    </a>
+    <p align="center"><em>Profile</em></p>
+  </div>
+
+  <div style="flex: 1 1 320px; max-width: 320px;">
+    <a href="assets/screenshots/shared_notification.png">
+      <img src="assets/screenshots/shared_notification.png" alt="Shared notification" width="320" style="border:1px solid #e1e4e8; border-radius:6px;" />
+    </a>
+    <p align="center"><em>Shared notification</em></p>
+  </div>
+
+  <div style="flex: 1 1 320px; max-width: 320px;">
+    <a href="assets/screenshots/Ai.png">
+      <img src="assets/screenshots/Ai.png" alt="AI Chat" width="320" style="border:1px solid #e1e4e8; border-radius:6px;" />
+    </a>
+    <p align="center"><em>AI Chat</em></p>
+  </div>
+
+</div>
 
 ---
 
@@ -191,5 +233,3 @@ If you like, I can:
 - Add the exact APK SHA256 to the download section,
 - Replace the raw GitHub badge link with a GitHub Release badge after you upload the APK as a Release asset,
 - Add a GitHub Actions workflow to build and publish the debug APK automatically.
-
-```
