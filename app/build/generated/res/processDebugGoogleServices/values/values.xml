@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">926533680473</string>
+    <string name="google_api_key" translatable="false">AIzaSyCdTMvadYO98ZvOwQVDO2B_yThnEUJvtdM</string>
+    <string name="google_app_id" translatable="false">1:926533680473:android:45fda5933924548d962048</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCdTMvadYO98ZvOwQVDO2B_yThnEUJvtdM</string>
+    <string name="google_storage_bucket" translatable="false">medivaultplus-5ef56.firebasestorage.app</string>
+    <string name="project_id" translatable="false">medivaultplus-5ef56</string>
+</resources>

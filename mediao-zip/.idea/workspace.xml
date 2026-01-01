@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/badge_bg.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/badge_red_circle.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/button_emergency_bg.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/button_sos_bg.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/emergency_header_bg.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/rounded_teal_button.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_ai_chat.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_doctor_home.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_doctor_inbox.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_doctor_verification.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_emergency.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_emergency_lock.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_my_reports.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_upload.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_report.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_doctor_select.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_report.xml">
+        <config>
+          <theme>@style/Theme.Medivault</theme>
+        </config>
+      </layout>
+    </layouts>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="16586f3b-b46b-4f36-8a38-9233ff096919" name="Changes" comment="DoctorSelectDialog UI changed">
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/medivault/EmergencyLockActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/drawable/button_emergency_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/drawable/button_sos_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/drawable/emergency_header_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_emergency_lock.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/medivault/EmergencyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/medivault/EmergencyActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/medivault/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/medivault/HomeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/medivault/UploadReportActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/example/medivault/UploadReportActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_emergency.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_emergency.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_home.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Satish\.android\avd\Prafulla.avd)]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Feature/Gemini-full" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Prafulla0001&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Prafulla0001/Medivault.git&quot;,
+    &quot;accountId&quot;: &quot;45497dcd-6b97-4396-b1c3-6461f2627011&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="34HMUdnDdQyrCSDEEgcID51lgB6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "Feature/UI-enhancement",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/DY Patil 3rd Sem/Final Medivault/mediao-zip",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="MediVault.app" />
+      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="16586f3b-b46b-4f36-8a38-9233ff096919" name="Changes" comment="" />
+      <created>1760866064119</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760866064119</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial github">
+      <option name="closed" value="true" />
+      <created>1766818984958</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1766818984958</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Search button added with good UI">
+      <option name="closed" value="true" />
+      <created>1766820732645</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1766820732645</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Basic Ai model is implemented &#10;many files are changed &#10;selected file still not supplied to api">
+      <option name="closed" value="true" />
+      <created>1766829325320</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1766829325320</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Dr functionality added">
+      <option name="closed" value="true" />
+      <created>1767205139213</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1767205139213</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Dr functionality added&quot;&#10;all files commited">
+      <option name="closed" value="true" />
+      <created>1767205313611</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1767205313611</updated>
+    </task>
+    <task id="LOCAL-00006" summary="AI icon added at home screen">
+      <option name="closed" value="true" />
+      <created>1767205657744</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1767205657744</updated>
+    </task>
+    <task id="LOCAL-00007" summary="AI removed report placeholder code">
+      <option name="closed" value="true" />
+      <created>1767206057526</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1767206057527</updated>
+    </task>
+    <task id="LOCAL-00008" summary="AI which retains memory">
+      <option name="closed" value="true" />
+      <created>1767206916453</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1767206916453</updated>
+    </task>
+    <task id="LOCAL-00009" summary="AI which retains memory&#10;added delete history option">
+      <option name="closed" value="true" />
+      <created>1767207047061</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1767207047061</updated>
+    </task>
+    <task id="LOCAL-00010" summary="AI which retains memory&#10;persnalization">
+      <option name="closed" value="true" />
+      <created>1767207406809</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1767207406810</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Starting with UI changes">
+      <option name="closed" value="true" />
+      <created>1767208600050</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1767208600051</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Hardcoded values fixed &#10;Blood group in Emergency info fixed">
+      <option name="closed" value="true" />
+      <created>1767251398171</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1767251398171</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Login Page ui changed">
+      <option name="closed" value="true" />
+      <created>1767252381649</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1767252381650</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Login Page ui changed&#10;ProfileAct, HomeAct, SignupAct changed">
+      <option name="closed" value="true" />
+      <created>1767253844731</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1767253844731</updated>
+    </task>
+    <task id="LOCAL-00015" summary="UI of ai chat changed">
+      <option name="closed" value="true" />
+      <created>1767255195214</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1767255195214</updated>
+    </task>
+    <task id="LOCAL-00016" summary="DoctorSelectDialog UI changed">
+      <option name="closed" value="true" />
+      <created>1767257036599</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1767257036599</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial github" />
+    <MESSAGE value="Search button added with good UI" />
+    <MESSAGE value="Basic Ai model is implemented &#10;many files are changed &#10;selected file still not supplied to api" />
+    <MESSAGE value="Dr functionality added" />
+    <MESSAGE value="Dr functionality added&quot;&#10;all files commited" />
+    <MESSAGE value="AI icon added at home screen" />
+    <MESSAGE value="AI removed report placeholder code" />
+    <MESSAGE value="AI which retains memory" />
+    <MESSAGE value="AI which retains memory&#10;added delete history option" />
+    <MESSAGE value="AI which retains memory&#10;persnalization" />
+    <MESSAGE value="Starting with UI changes" />
+    <MESSAGE value="Hardcoded values fixed &#10;Blood group in Emergency info fixed" />
+    <MESSAGE value="Login Page ui changed" />
+    <MESSAGE value="Login Page ui changed&#10;ProfileAct, HomeAct, SignupAct changed" />
+    <MESSAGE value="UI of ai chat changed" />
+    <MESSAGE value="DoctorSelectDialog UI changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="DoctorSelectDialog UI changed" />
+  </component>
+  <component name="play_dynamic_filters_status">
+    <option name="appIdToCheckInfo">
+      <map>
+        <entry key="com.example.medivault">
+          <value>
+            <CheckInfo lastCheckTimestamp="1767197143223" />
+          </value>
+        </entry>
+        <entry key="com.example.medivault.test">
+          <value>
+            <CheckInfo lastCheckTimestamp="1767197143225" />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
