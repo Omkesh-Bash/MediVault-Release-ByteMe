@@ -3,7 +3,6 @@ package com.example.medivault;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -40,7 +39,7 @@ public class AiChatActivity extends AppCompatActivity {
     private RecyclerView rvChatMessages;
     private EditText etMessage;
     private ImageButton btnSend;
-    private Button btnDeleteHistory;
+    private ImageButton btnDeleteHistory;
     private ProgressBar progressBar;
     private ChatAdapter chatAdapter;
     private List<ChatMessage> chatMessages;
