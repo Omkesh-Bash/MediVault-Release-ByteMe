@@ -1,8 +1,18 @@
 # MediVault
 
-A secure Android app to store, manage and share personal medical reports. MediVault allows users to upload and view medical reports, interact with doctors, and access emergency features — built with Java and Firebase.
+[![Build Status](https://img.shields.io/badge/Android-Java-orange?logo=android&logoColor=white)](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe)
+[![Firebase](https://img.shields.io/badge/Firebase-Configured-blue?logo=firebase)](https://console.firebase.google.com/)
+[![Download APK (Drive)](https://img.shields.io/badge/Download%20APK-Google%20Drive-brightgreen?logo=google-drive)](https://drive.google.com/file/d/1EF3Thr7HHAErk8J6h6U0oYeXf6rr7MP-/view?usp=sharing)
+[![Download APK (raw)](https://img.shields.io/badge/Download%20APK-Raw%20GitHub-brightgreen?logo=github)](https://raw.githubusercontent.com/Omkesh-Bash/MediVault-Release-ByteMe/files/app/build/outputs/apk/debug/Final%20MediVault.apk)
 
-[![Download Debug APK](https://img.shields.io/badge/Download%20Debug%20APK-APK-brightgreen?logo=android)](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/tree/main/app/build/outputs/apk/debug)
+A secure Android app to store, manage and share personal medical reports. MediVault lets users upload and view medical reports, interact with doctors, and access emergency features — built with Java and Firebase.
+
+---
+
+## Quick links
+- Download (recommended): Google Drive — https://drive.google.com/file/d/1EF3Thr7HHAErk8J6h6U0oYeXf6rr7MP-/view?usp=sharing
+- Raw APK (repo branch `files`): https://raw.githubusercontent.com/Omkesh-Bash/MediVault-Release-ByteMe/files/app/build/outputs/apk/debug/Final%20MediVault.apk
+- Project: https://github.com/Omkesh-Bash/MediVault-Release-ByteMe
 
 ---
 
@@ -10,14 +20,14 @@ A secure Android app to store, manage and share personal medical reports. MediVa
 - [About](#about)
 - [Key features](#key-features)
 - [Screenshots](#screenshots)
+- [Download & install](#download--install)
 - [Tech stack](#tech-stack)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
-- [Download debug APK](#download-debug-apk)
 - [Firebase setup](#firebase-setup)
 - [Build & run (CLI)](#build--run-cli)
 - [Project structure](#project-structure)
-- [Notes & security](#notes--security)
+- [Security & notes](#security--notes)
 - [Contributing](#contributing)
 - [License & contact](#license--contact)
 
@@ -29,122 +39,106 @@ MediVault is an Android application (Java) that acts as a personal vault for med
 ---
 
 ## Key features
-- User authentication (signup / login)
-- Upload, view and list medical reports
-- Report adapters & utilities to manage file metadata
-- Doctor flows: verification, inbox and report review
-- In-app chat and AI-assistant screen
-- Emergency modes and lock screen functionality
-- Firebase integration for backend services (auth, storage, DB, messaging)
+- ✅ User authentication (signup / login)  
+- ✅ Upload, view and list medical reports (with adapters & utilities)  
+- ✅ Doctor workflows: verification, inbox and report review  
+- ✅ In-app chat / AI assistant screen  
+- ✅ Emergency mode & quick lock screen  
+- ✅ Firebase integration (Auth, Storage, Database, Messaging)
 
 ---
 
 ## Screenshots
-(Add screenshots into `assets/screenshots/` or replace links below)
-- Home screen — List of reports
-- Upload report flow
-- View report screen
-- Doctor inbox & verification screens
-- AI Chat screen
+(Replace these with real screenshots inside `assets/screenshots/`.)
+- Home / Reports list
+- Upload report
+- View report
+- Doctor inbox & verification
+- AI Chat
+
+---
+
+## Download & install
+
+Important:
+- APKs installed from outside the Play Store require the user to enable "Install unknown apps" for the installing app (browser or file manager).  
+- Make sure you trust the source before installing. Review the code or build yourself if you need maximum assurance.
+
+Download options (choose one):
+- Google Drive (recommended for easy public sharing)  
+  [Download Final MediVault.apk — Google Drive](https://drive.google.com/file/d/1EF3Thr7HHAErk8J6h6U0oYeXf6rr7MP-/view?usp=sharing)
+
+- Raw file from this repository (branch `files`)  
+  [Download Final MediVault.apk — Raw GitHub](https://raw.githubusercontent.com/Omkesh-Bash/MediVault-Release-ByteMe/files/app/build/outputs/apk/debug/Final%20MediVault.apk)
+
+How to install:
+1. Download the APK.
+2. On your Android device, enable installation from unknown sources for the app you use to open the APK (Settings → Apps → Browser/File Manager → Install unknown apps).
+3. Open the APK file and follow the installer prompts.
+
+Optional verification:
+- We recommend verifying the APK checksum after download. Example (on Linux/macOS):
+  ```bash
+  shasum -a 256 Final\ MediVault.apk
+  ```
+  (Replace with the published SHA256 fingerprint when available.)
 
 ---
 
 ## Tech stack
 - Android (Java)
 - Gradle (build system)
-- Firebase (Auth, Storage, Database, Cloud Messaging — configured via `google-services.json`)
-- XML layouts (res/) for UI
+- Firebase (Auth, Storage, DB, Cloud Messaging)
+- XML layouts for UI
 
 ---
 
 ## Prerequisites
-- JDK 11+ (or JDK supported by your Android Gradle plugin)
-- Android Studio (recommended) or command-line Android SDK + Gradle
-- Android SDK platform(s) that the project targets (check `build.gradle`)
-- A working Firebase project (for auth, storage, DB)
+- JDK 11+ (or the JDK required by your Android Gradle plugin)
+- Android Studio (recommended) or Android SDK + Gradle CLI
+- Android SDK platform(s) targeted by the project
+- A Firebase project (if you want to run with backend services)
 
 ---
 
 ## Getting started
 
-1. Clone the repository
+1. Clone:
    ```bash
    git clone https://github.com/Omkesh-Bash/MediVault-Release-ByteMe.git
    cd MediVault-Release-ByteMe
    ```
-
-2. Open in Android Studio
-   - Choose "Open an existing Android Studio project" and select the cloned folder.
-   - Let Android Studio sync Gradle and download dependencies.
-
-3. Configure Firebase (see the Firebase setup section below)
-4. Run on an emulator or device:
-   - From Android Studio: Run ▶ or
-   - Command line:
-     ```bash
-     ./gradlew assembleDebug
-     ./gradlew installDebug
-     ```
-
----
-
-## Download debug APK
-
-You can provide a ready-to-install debug build directly from this repository using one of the recommended approaches below. The badge at the top links to an example release asset URL — replace it with your real release asset URL after uploading.
-
-Recommended (GitHub Releases)
-1. Build the debug APK locally:
-   ```bash
-   ./gradlew :app:assembleDebug
-   ```
-   The APK will be at: `app/build/outputs/apk/debug/app-debug.apk`
-
-2. In your repository on GitHub → Releases → Draft a new release → upload `app-debug.apk` as a release asset → publish.
-
-3. Replace the badge and links in this README with the release asset URL. Example release asset URL format:
-   ```
-   https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/releases/download/<RELEASE_TAG>/app-debug.apk
-   ```
-
-If you prefer automation:
-- Use GitHub Actions to build the debug APK on push and either:
-  - Upload the APK as a release asset automatically, or
-  - Save it as a workflow artifact and link or badge to your release.
-
-Notes & security:
-- Do not publish APKs that embed sensitive keys or production credentials.
-- For private repos, download access respects repo permissions — users must be signed in and have repository access.
-- Avoid committing large binaries into the repo history; prefer Releases, Git LFS, or external storage.
+2. Open in Android Studio and let Gradle sync.
+3. Configure Firebase (see below) or replace `app/google-services.json` with your file.
+4. Run on emulator or device.
 
 ---
 
 ## Firebase setup
-1. Create a Firebase project at https://console.firebase.google.com/
-2. Add an Android app to the Firebase project and register the app with your package name (check `AndroidManifest.xml` for the package).
-3. Download `google-services.json` from Firebase and place it in:
+1. Create a Firebase project: https://console.firebase.google.com/
+2. Add an Android app with the package name found in `AndroidManifest.xml`.
+3. Download `google-services.json` and place it at:
    ```
    app/google-services.json
    ```
-   (This repo currently contains a `google-services.json` file — ensure it matches your Firebase project or replace it with your own.)
+4. Enable the services the app uses:
+   - Authentication (Email/Password)
+   - Cloud Storage (for report files)
+   - Firestore / Realtime Database (app data)
+   - Cloud Messaging (optional)
 
-4. Enable required Firebase features (as used in the app):
-   - Authentication (Email/Password, or whichever providers the app expects)
-   - Cloud Storage (for storing report files)
-   - Firestore or Realtime Database (for app data)
-   - Cloud Messaging (optional — for notifications)
-
-5. If you use any API keys (third-party), store them securely (do not commit secrets).
+Security: Do not commit production credentials or private keys.
 
 ---
 
 ## Build & run (CLI)
 - Build debug APK:
   ```bash
-  ./gradlew assembleDebug
+  ./gradlew :app:assembleDebug
   ```
-- Install to connected device:
+- Install on a connected device:
   ```bash
-  ./gradlew installDebug
+  ./gradlew :app:installDebug
   ```
 - Clean:
   ```bash
@@ -156,55 +150,46 @@ Notes & security:
 ## Project structure (high level)
 - app/
   - src/main/java/com/example/medivault/ — main Java sources
-    - Activities: SplashActivity, LoginActivity, SignupActivity, HomeActivity, ProfileActivity
-    - Report flows: UploadReportActivity, ViewReportActivity, MyReportsActivity
-    - Doctor flows: DoctorHomeActivity, DoctorInboxActivity, DoctorVerificationActivity
+    - Activities: Splash, Login, Signup, Home, Profile
+    - Reports: UploadReportActivity, ViewReportActivity, MyReportsActivity
+    - Doctor: DoctorHomeActivity, DoctorInboxActivity, DoctorVerificationActivity
     - Chat: AiChatActivity, ChatAdapter, ChatMessage
-    - Utilities / models: Report, ReportUtils, DoctorUtils, etc.
-  - src/main/res/ — layouts, drawables, strings, etc.
-  - AndroidManifest.xml — app manifest and permissions
-  - google-services.json — Firebase configuration
-
-Tip: Start by reading `AndroidManifest.xml` to see the declared launch activity and required permissions, then open `HomeActivity`, `UploadReportActivity`, and `ViewReportActivity` to understand the core flows.
+    - Models / Utils: Report, ReportUtils, DoctorUtils, etc.
+  - src/main/res/ — layouts, drawables, strings
+  - AndroidManifest.xml — app manifest & permissions
+  - google-services.json — Firebase config (replace with your project file)
 
 ---
 
-## Notes & security
-- Do not commit private keys, credentials, or production `google-services.json` that expose sensitive data.
-- Ensure Firebase Security Rules are configured for Storage and Database to prevent unauthorized reads/writes.
-- Consider adding local encryption for stored report metadata or files if required by your privacy model.
-- This repository is Java-based; migrating to Kotlin is optional but could improve modern Android compatibility.
+## Security & notes
+- Do not publish APKs containing secret API keys or production credentials.
+- For production, configure Firebase security rules to restrict access to authenticated users and to validate uploads.
+- Prefer distributing signed release builds via Play Store or official channels for production usage.
+- For repository binaries, GitHub Releases or external hosting (S3 / Firebase Storage) are preferred over committing large files in repo history.
 
 ---
 
 ## Contributing
-Contributions are welcome. Suggested workflow:
-1. Fork the repo.
-2. Create a feature branch:
+Thanks for your interest! Suggested workflow:
+1. Fork → create branch:
    ```bash
    git checkout -b feat/your-feature
    ```
-3. Make changes, add tests where applicable.
-4. Submit a pull request with a clear description of the change.
+2. Make changes and open a pull request with a clear description.
 
-Please open issues for bugs or feature requests with steps to reproduce.
-
----
-
-## Troubleshooting
-- Gradle sync errors: check Android Studio SDK/NDK settings and Java version.
-- Firebase auth/storage errors: verify `google-services.json` and Firebase console configuration.
-- Runtime crashes: check Logcat for stack traces and missing permission requests (e.g. storage, camera).
+Please open issues for bugs or feature requests including reproduction steps.
 
 ---
 
 ## License & contact
-- License: Add a LICENSE file to this repository to declare the license you want to use (MIT, Apache-2.0, etc.).
-- Author / Contact: Prafulla0001, Omkesh-Bash — see repository owner on GitHub.
+- License: Add a LICENSE file (MIT / Apache-2.0 recommended).
+- Authors / Contacts: Prafulla0001, Omkesh-Bash
 
 ---
 
-Thanks for checking out MediVault! If you'd like, I can:
-- Add a GitHub Actions workflow to automatically build the debug APK and attach it to Releases,
-- Replace the badge URL with the real release asset URL after you upload the APK,
-- Generate CONTRIBUTING.md or SECURITY.md files.
+If you like, I can:
+- Add the exact APK SHA256 to the download section,
+- Replace the raw GitHub badge link with a GitHub Release badge after you upload the APK as a Release asset,
+- Add a GitHub Actions workflow to build and publish the debug APK automatically.
+
+```
