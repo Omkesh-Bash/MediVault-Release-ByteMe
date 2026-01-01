@@ -1,6 +1,8 @@
 # MediVault
 
-A secure Android app to store, manage and share personal medical reports. MediVault allows users to upload and view medical reports, interact with doctors, and access emergency features — all built with Java and Firebase.
+A secure Android app to store, manage and share personal medical reports. MediVault allows users to upload and view medical reports, interact with doctors, and access emergency features — built with Java and Firebase.
+
+[![Download Debug APK](https://img.shields.io/badge/Download%20Debug%20APK-APK-brightgreen?logo=android)](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/releases/download/v0.1/app-debug.apk)
 
 ---
 
@@ -11,6 +13,7 @@ A secure Android app to store, manage and share personal medical reports. MediVa
 - [Tech stack](#tech-stack)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
+- [Download debug APK](#download-debug-apk)
 - [Firebase setup](#firebase-setup)
 - [Build & run (CLI)](#build--run-cli)
 - [Project structure](#project-structure)
@@ -50,7 +53,7 @@ MediVault is an Android application (Java) that acts as a personal vault for med
 - Android (Java)
 - Gradle (build system)
 - Firebase (Auth, Storage, Database, Cloud Messaging — configured via `google-services.json`)
-- Project uses XML layouts (res/) for UI
+- XML layouts (res/) for UI
 
 ---
 
@@ -74,7 +77,7 @@ MediVault is an Android application (Java) that acts as a personal vault for med
    - Choose "Open an existing Android Studio project" and select the cloned folder.
    - Let Android Studio sync Gradle and download dependencies.
 
-3. Configure Firebase (see next section)
+3. Configure Firebase (see the Firebase setup section below)
 4. Run on an emulator or device:
    - From Android Studio: Run ▶ or
    - Command line:
@@ -82,6 +85,36 @@ MediVault is an Android application (Java) that acts as a personal vault for med
      ./gradlew assembleDebug
      ./gradlew installDebug
      ```
+
+---
+
+## Download debug APK
+
+You can provide a ready-to-install debug build directly from this repository using one of the recommended approaches below. The badge at the top links to an example release asset URL — replace it with your real release asset URL after uploading.
+
+Recommended (GitHub Releases)
+1. Build the debug APK locally:
+   ```bash
+   ./gradlew :app:assembleDebug
+   ```
+   The APK will be at: `app/build/outputs/apk/debug/app-debug.apk`
+
+2. In your repository on GitHub → Releases → Draft a new release → upload `app-debug.apk` as a release asset → publish.
+
+3. Replace the badge and links in this README with the release asset URL. Example release asset URL format:
+   ```
+   https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/releases/download/<RELEASE_TAG>/app-debug.apk
+   ```
+
+If you prefer automation:
+- Use GitHub Actions to build the debug APK on push and either:
+  - Upload the APK as a release asset automatically, or
+  - Save it as a workflow artifact and link or badge to your release.
+
+Notes & security:
+- Do not publish APKs that embed sensitive keys or production credentials.
+- For private repos, download access respects repo permissions — users must be signed in and have repository access.
+- Avoid committing large binaries into the repo history; prefer Releases, Git LFS, or external storage.
 
 ---
 
@@ -167,11 +200,11 @@ Please open issues for bugs or feature requests with steps to reproduce.
 
 ## License & contact
 - License: Add a LICENSE file to this repository to declare the license you want to use (MIT, Apache-2.0, etc.).
-- Author / Contact: ByteMe Team — see repository owner on GitHub.
+- Author / Contact: Prafulla0001, Omkesh-Bash — see repository owner on GitHub.
 
 ---
 
-Thanks for checking out MediVault! If you want, I can:
-- Add badges (build / Firebase / license) to the top,
-- Generate a CONTRIBUTING.md or SECURITY.md,
-- Produce a quick developer guide that maps features to files (e.g., where upload logic lives).
+Thanks for checking out MediVault! If you'd like, I can:
+- Add a GitHub Actions workflow to automatically build the debug APK and attach it to Releases,
+- Replace the badge URL with the real release asset URL after you upload the APK,
+- Generate CONTRIBUTING.md or SECURITY.md files.
