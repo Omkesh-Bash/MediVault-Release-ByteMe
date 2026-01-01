@@ -14,7 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    TextView tvName, tvEmail, tvAge, tvGender, tvBlood, tvEmergency;
+    TextView tvName, tvEmail, tvAge, tvGender, tvBloodGroup, tvEmergency;
     Button btnLogout;
     FirebaseAuth auth;
     FirebaseFirestore firestore;
@@ -28,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvEmail = findViewById(R.id.tvEmail);
         tvAge = findViewById(R.id.tvAge);
         tvGender = findViewById(R.id.tvGender);
-        tvBlood = findViewById(R.id.tvBloodGroup);
+        tvBloodGroup = findViewById(R.id.tvBloodGroup);
         tvEmergency = findViewById(R.id.tvEmergency);
         btnLogout = findViewById(R.id.btnLogout);
 
@@ -45,7 +45,7 @@ public class ProfileActivity extends AppCompatActivity {
                         tvEmail.setText(documentSnapshot.getString("email"));
                         tvAge.setText(documentSnapshot.getString("age"));
                         tvGender.setText(documentSnapshot.getString("gender"));
-                        tvBlood.setText(documentSnapshot.getString("bloodGroup"));
+                        tvBloodGroup.setText(documentSnapshot.getString("bloodGroup"));
                         tvEmergency.setText(documentSnapshot.getString("emergency"));
                     }
                 })
@@ -59,7 +59,7 @@ public class ProfileActivity extends AppCompatActivity {
             tvEmail.setText("");
             tvAge.setText("");
             tvGender.setText("");
-            tvBlood.setText("");
+            tvBloodGroup.setText("");
             tvEmergency.setText("");
 
             // Firebase Sign out
