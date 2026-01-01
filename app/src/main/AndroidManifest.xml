@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -47,10 +50,15 @@
         <activity android:name=".DoctorHomeActivity" />
         <activity android:name=".DoctorInboxActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".EmergencyLockActivity"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"/>
 
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
 </manifest>
