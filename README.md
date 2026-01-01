@@ -2,7 +2,7 @@
 
 A secure Android app to store, manage and share personal medical reports. MediVault allows users to upload and view medical reports, interact with doctors, and access emergency features — built with Java and Firebase.
 
-[![Download Debug APK](https://img.shields.io/badge/Download%20Debug%20APK-APK-brightgreen?logo=android)](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/releases/download/v0.1/app-debug.apk)
+[![Download Debug APK](https://img.shields.io/badge/Download%20Debug%20APK-APK-brightgreen?logo=android)](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/app/build/outputs/apk/debug/)
 
 ---
 
