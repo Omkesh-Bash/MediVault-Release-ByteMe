@@ -53,7 +53,7 @@ MediVault is an Android application (Java) that acts as a personal vault for med
 - Home / Reports list
 - Upload report
 - View report
-- Doctor inbox & verification
+- Doctor inbox & verification 
 - AI Chat
 
 ---
