@@ -10,4 +10,17 @@
         <item>O+</item>
         <item>O-</item>
     </string-array>
+
+    <string-array name="genders">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="roles">
+        <item>Select Role</item>
+        <item>User</item>
+        <item>Doctor</item>
+    </string-array>
 </resources>

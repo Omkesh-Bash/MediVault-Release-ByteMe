@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create Account"
+            android:text="@string/create_account"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#1E88E5"
@@ -32,7 +32,7 @@
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Name"
+                android:hint="@string/user_name"
                 android:background="@drawable/edit_text_bg"
                 android:textSize="16sp"
                 android:paddingLeft="20dp"/>
@@ -41,7 +41,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp"
                 android:background="@drawable/edit_text_bg"
@@ -52,7 +52,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:paddingLeft="20dp"
                 android:background="@drawable/edit_text_bg"
@@ -63,7 +63,7 @@
                 android:id="@+id/etAge"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Age"
+                android:hint="@string/age"
                 android:inputType="number"
                 android:paddingLeft="20dp"
                 android:background="@drawable/edit_text_bg"
@@ -78,6 +78,7 @@
                 android:layout_marginTop="12dp"
                 android:padding="12dp"
                 android:background="@drawable/edit_text_bg"
+                android:entries="@array/roles"
                 android:spinnerMode="dropdown"/>
 
             <Spinner
@@ -87,6 +88,7 @@
                 android:layout_marginTop="12dp"
                 android:padding="12dp"
                 android:background="@drawable/edit_text_bg"
+                android:entries="@array/genders"
                 android:spinnerMode="dropdown"/>
 
             <Spinner
@@ -96,13 +98,14 @@
                 android:layout_marginTop="12dp"
                 android:padding="12dp"
                 android:background="@drawable/edit_text_bg"
+                android:entries="@array/blood_groups"
                 android:spinnerMode="dropdown"/>
 
             <EditText
                 android:id="@+id/etEmergency"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Emergency Contact"
+                android:hint="@string/emergency_contact"
                 android:inputType="phone"
                 android:paddingLeft="20dp"
                 android:background="@drawable/edit_text_bg"
@@ -114,7 +117,7 @@
                 android:id="@+id/btnSignup"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Signup"
+                android:text="@string/signup"
                 android:textSize="20sp"
                 android:textColor="#ffffff"
                 android:textAlignment="center"

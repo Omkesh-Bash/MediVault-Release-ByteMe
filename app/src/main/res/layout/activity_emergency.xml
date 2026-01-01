@@ -18,7 +18,7 @@
             android:id="@+id/tvHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Emergency Information"
+            android:text="@string/emergency_information"
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="#1976D2"
@@ -40,20 +40,20 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <EditText
-                    android:id="@+id/etBloodGroup"
-                    android:hint="Blood Group"
-                    android:textSize="18sp"
+                <Spinner
+                    android:id="@+id/spinnerBloodGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@android:drawable/ic_menu_info_details"
+                    android:hint="@string/blood_group"
+                    android:entries="@array/blood_groups"
+                    android:textSize="18sp"
                     android:padding="14dp"
                     android:background="@drawable/edittext_bg"
                     android:layout_marginBottom="14dp"/>
 
                 <EditText
                     android:id="@+id/etAllergies"
-                    android:hint="Allergies"
+                    android:hint="@string/allergies"
                     android:textSize="18sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
 
                 <EditText
                     android:id="@+id/etEmergencyContact"
-                    android:hint="Emergency Contact No."
+                    android:hint="@string/emergency_contact_no"
                     android:inputType="phone"
                     android:textSize="18sp"
                     android:layout_width="match_parent"
@@ -77,20 +77,19 @@
 
                 <EditText
                     android:id="@+id/etDoctorContact"
-                    android:hint="Doctor Contact No."
+                    android:hint="@string/doctor_contact_no"
                     android:inputType="phone"
                     android:textSize="18sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@android:drawable/ic_menu_myplaces"
-                    android:padding="14dp"
-                    android:background="@drawable/edittext_bg"
+                    android:padding="14dp"                    android:background="@drawable/edittext_bg"
                     android:layout_marginBottom="16dp"
                     android:maxLength="10"/>
 
                 <Button
                     android:id="@+id/btnSaveEmergency"
-                    android:text="Save Emergency Info"
+                    android:text="@string/save_emergency_info"
                     android:textSize="18sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

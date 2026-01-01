@@ -14,20 +14,20 @@
     <string name="Sign_up">Sign Up</string>
     <string name="Email">Email</string>
     <string name="mail">Email</string>
-    <string name="medivault">
+    <string name="medivault">"
 </string>
 
-    <string-array name="genders">
-        <item>Gender</item>
-        <item>Male</item>
-        <item>Female</item>
-        <item>Other</item>
-    </string-array>
+    <string name="create_account">Create Account</string>
+    <string name="user_name">Name</string>
+    <string name="age">Age</string>
+    <string name="emergency_contact">Emergency Contact</string>
+    <string name="signup">Signup</string>
 
-    <string-array name="roles">
-        <item>Select Role</item>
-        <item>User</item>
-        <item>Doctor</item>
-    </string-array>
+    <string name="emergency_information">Emergency Information</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="allergies">Allergies</string>
+    <string name="emergency_contact_no">Emergency Contact No.</string>
+    <string name="doctor_contact_no">Doctor Contact No.</string>
+    <string name="save_emergency_info">Save Emergency Info</string>
 
 </resources>
