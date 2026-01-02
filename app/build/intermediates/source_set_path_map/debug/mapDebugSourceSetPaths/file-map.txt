@@ -1,49 +1,49 @@
-com.example.medivault.app-browser-1.4.0-0 C:\Users\Satish\.gradle\caches\8.13\transforms\03a2ce8064d14f48c0507904f4b1b38a\transformed\browser-1.4.0\res
-com.example.medivault.app-cardview-1.0.0-1 C:\Users\Satish\.gradle\caches\8.13\transforms\08aa678cd133e5f84fc0dffc918dd340\transformed\cardview-1.0.0\res
-com.example.medivault.app-jetified-lifecycle-process-2.6.2-2 C:\Users\Satish\.gradle\caches\8.13\transforms\0a3082950d1a6317011baac170e9d01f\transformed\jetified-lifecycle-process-2.6.2\res
-com.example.medivault.app-jetified-cloudinary-android-ui-2.3.1-3 C:\Users\Satish\.gradle\caches\8.13\transforms\0bfe47d6d9827220797d130421b04eef\transformed\jetified-cloudinary-android-ui-2.3.1\res
-com.example.medivault.app-drawerlayout-1.1.1-4 C:\Users\Satish\.gradle\caches\8.13\transforms\0c6c53021d43f55dd53c720a15d351fc\transformed\drawerlayout-1.1.1\res
-com.example.medivault.app-jetified-drawee-2.6.0-5 C:\Users\Satish\.gradle\caches\8.13\transforms\11eba20928fc81a30138ee233b5b2625\transformed\jetified-drawee-2.6.0\res
-com.example.medivault.app-jetified-activity-1.8.0-6 C:\Users\Satish\.gradle\caches\8.13\transforms\19868257a99bd9f3f8a4dfd91cf6e5ee\transformed\jetified-activity-1.8.0\res
-com.example.medivault.app-material-1.12.0-7 C:\Users\Satish\.gradle\caches\8.13\transforms\1b4ac28bc094c7e70cc6d0341480ea62\transformed\material-1.12.0\res
-com.example.medivault.app-jetified-cloudinary-android-preprocess-2.3.1-8 C:\Users\Satish\.gradle\caches\8.13\transforms\1e3e325df87f61341df84d0a7dbd9933\transformed\jetified-cloudinary-android-preprocess-2.3.1\res
-com.example.medivault.app-jetified-lifecycle-viewmodel-savedstate-2.6.2-9 C:\Users\Satish\.gradle\caches\8.13\transforms\1eb3bc0da5ab0f9cfd12d2ec244e980d\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\res
-com.example.medivault.app-lifecycle-livedata-2.6.2-10 C:\Users\Satish\.gradle\caches\8.13\transforms\211f74fc171a57141201a7f29cef66b2\transformed\lifecycle-livedata-2.6.2\res
-com.example.medivault.app-work-runtime-2.7.1-11 C:\Users\Satish\.gradle\caches\8.13\transforms\21d992fe5e3755c35dd657083e5138b9\transformed\work-runtime-2.7.1\res
-com.example.medivault.app-jetified-play-services-basement-18.1.0-12 C:\Users\Satish\.gradle\caches\8.13\transforms\25d4af2499db88a23c87a543d8a31b86\transformed\jetified-play-services-basement-18.1.0\res
-com.example.medivault.app-jetified-viewpager2-1.0.0-13 C:\Users\Satish\.gradle\caches\8.13\transforms\2bfdd9098f75261ada17674315104926\transformed\jetified-viewpager2-1.0.0\res
-com.example.medivault.app-recyclerview-1.1.0-14 C:\Users\Satish\.gradle\caches\8.13\transforms\3cd482fd77e9d5728179c5e6266d23c9\transformed\recyclerview-1.1.0\res
-com.example.medivault.app-appcompat-1.7.0-15 C:\Users\Satish\.gradle\caches\8.13\transforms\40eefbe463534cdf99bdb8e9767e11df\transformed\appcompat-1.7.0\res
-com.example.medivault.app-jetified-firebase-common-20.3.3-16 C:\Users\Satish\.gradle\caches\8.13\transforms\462be5901c3913a3781c28aaa55aa9b6\transformed\jetified-firebase-common-20.3.3\res
-com.example.medivault.app-jetified-glide-4.16.0-17 C:\Users\Satish\.gradle\caches\8.13\transforms\5d8528dcde8e9fe095d92c2f27f0dcd4\transformed\jetified-glide-4.16.0\res
-com.example.medivault.app-jetified-lifecycle-service-2.6.2-18 C:\Users\Satish\.gradle\caches\8.13\transforms\5d89a2a395e63ff657804c39fb30adb9\transformed\jetified-lifecycle-service-2.6.2\res
-com.example.medivault.app-lifecycle-viewmodel-2.6.2-19 C:\Users\Satish\.gradle\caches\8.13\transforms\5d9c4e1903442007fe4c915ce206e436\transformed\lifecycle-viewmodel-2.6.2\res
-com.example.medivault.app-jetified-play-services-base-18.1.0-20 C:\Users\Satish\.gradle\caches\8.13\transforms\8029ca945f31d58fa2dc1173f562b15a\transformed\jetified-play-services-base-18.1.0\res
-com.example.medivault.app-transition-1.5.0-21 C:\Users\Satish\.gradle\caches\8.13\transforms\802f23fbfd620c318bf19ce738369c66\transformed\transition-1.5.0\res
-com.example.medivault.app-lifecycle-livedata-core-2.6.2-22 C:\Users\Satish\.gradle\caches\8.13\transforms\83d1f30f28397407453c02c4afe88490\transformed\lifecycle-livedata-core-2.6.2\res
-com.example.medivault.app-jetified-appcompat-resources-1.7.0-23 C:\Users\Satish\.gradle\caches\8.13\transforms\856cacb932815307ebf6a6c6f3536bdb\transformed\jetified-appcompat-resources-1.7.0\res
-com.example.medivault.app-jetified-annotation-experimental-1.4.0-24 C:\Users\Satish\.gradle\caches\8.13\transforms\8708d080d31339ba2e0b0ccf608d2e59\transformed\jetified-annotation-experimental-1.4.0\res
-com.example.medivault.app-coordinatorlayout-1.1.0-25 C:\Users\Satish\.gradle\caches\8.13\transforms\8feff7d28f7aa08935b18c1b0630f007\transformed\coordinatorlayout-1.1.0\res
-com.example.medivault.app-jetified-savedstate-1.2.1-26 C:\Users\Satish\.gradle\caches\8.13\transforms\9765ba53d45758875b8a4208072e935a\transformed\jetified-savedstate-1.2.1\res
-com.example.medivault.app-jetified-startup-runtime-1.1.1-27 C:\Users\Satish\.gradle\caches\8.13\transforms\9b426b1a0c0d09ba4116c6793ab210b4\transformed\jetified-startup-runtime-1.1.1\res
-com.example.medivault.app-fragment-1.5.4-28 C:\Users\Satish\.gradle\caches\8.13\transforms\a3dadd2de82addc85df6d8514b7720d1\transformed\fragment-1.5.4\res
-com.example.medivault.app-jetified-emoji2-views-helper-1.3.0-29 C:\Users\Satish\.gradle\caches\8.13\transforms\bc0c724020bdeefda6e0259b45851441\transformed\jetified-emoji2-views-helper-1.3.0\res
-com.example.medivault.app-jetified-tracing-1.1.0-30 C:\Users\Satish\.gradle\caches\8.13\transforms\bebe0a8ece1087f32c37c2160a8a9f00\transformed\jetified-tracing-1.1.0\res
-com.example.medivault.app-media-1.0.0-31 C:\Users\Satish\.gradle\caches\8.13\transforms\c1446340e93bd8232ff03efcd32a8ff5\transformed\media-1.0.0\res
-com.example.medivault.app-jetified-profileinstaller-1.3.1-32 C:\Users\Satish\.gradle\caches\8.13\transforms\d1c866fb9d3fac6e4d9a31e00e30872d\transformed\jetified-profileinstaller-1.3.1\res
-com.example.medivault.app-core-1.13.0-33 C:\Users\Satish\.gradle\caches\8.13\transforms\dabf1e73459daefc5b4a4ffe47d142e2\transformed\core-1.13.0\res
-com.example.medivault.app-jetified-emoji2-1.3.0-34 C:\Users\Satish\.gradle\caches\8.13\transforms\deda78479e4d35a1cb3e8c69034a050c\transformed\jetified-emoji2-1.3.0\res
-com.example.medivault.app-constraintlayout-2.0.1-35 C:\Users\Satish\.gradle\caches\8.13\transforms\df9820b480dd4c164f4bf5bad268ce79\transformed\constraintlayout-2.0.1\res
-com.example.medivault.app-lifecycle-runtime-2.6.2-36 C:\Users\Satish\.gradle\caches\8.13\transforms\e5f856d8b70c22daa940f42df5b76430\transformed\lifecycle-runtime-2.6.2\res
-com.example.medivault.app-core-runtime-2.2.0-37 C:\Users\Satish\.gradle\caches\8.13\transforms\eb4d7704b74206e5f1abc34effb3bf48\transformed\core-runtime-2.2.0\res
-com.example.medivault.app-jetified-core-ktx-1.13.0-38 C:\Users\Satish\.gradle\caches\8.13\transforms\f6e04c7daab6633a9a8ad815097d7a9e\transformed\jetified-core-ktx-1.13.0\res
-com.example.medivault.app-jetified-core-1.7.0-39 C:\Users\Satish\.gradle\caches\8.13\transforms\fed1411e87618b0cfd77de3ba73a60ab\transformed\jetified-core-1.7.0\res
-com.example.medivault.app-pngs-40 D:\DY Patil 3rd Sem\Final Medivault\app\build\generated\res\pngs\debug
-com.example.medivault.app-res-41 D:\DY Patil 3rd Sem\Final Medivault\app\build\generated\res\processDebugGoogleServices
-com.example.medivault.app-resValues-42 D:\DY Patil 3rd Sem\Final Medivault\app\build\generated\res\resValues\debug
-com.example.medivault.app-updated_navigation_xml-43 D:\DY Patil 3rd Sem\Final Medivault\app\build\generated\updated_navigation_xml\debug
-com.example.medivault.app-packageDebugResources-44 D:\DY Patil 3rd Sem\Final Medivault\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.medivault.app-packageDebugResources-45 D:\DY Patil 3rd Sem\Final Medivault\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.medivault.app-debug-46 D:\DY Patil 3rd Sem\Final Medivault\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.medivault.app-debug-47 D:\DY Patil 3rd Sem\Final Medivault\app\src\debug\res
-com.example.medivault.app-main-48 D:\DY Patil 3rd Sem\Final Medivault\app\src\main\res
+com.example.medivault.app-browser-1.4.0-0 /home/omkesh/.gradle/caches/8.13/transforms/03a2ce8064d14f48c0507904f4b1b38a/transformed/browser-1.4.0/res
+com.example.medivault.app-cardview-1.0.0-1 /home/omkesh/.gradle/caches/8.13/transforms/08aa678cd133e5f84fc0dffc918dd340/transformed/cardview-1.0.0/res
+com.example.medivault.app-jetified-lifecycle-process-2.6.2-2 /home/omkesh/.gradle/caches/8.13/transforms/0a3082950d1a6317011baac170e9d01f/transformed/jetified-lifecycle-process-2.6.2/res
+com.example.medivault.app-jetified-cloudinary-android-ui-2.3.1-3 /home/omkesh/.gradle/caches/8.13/transforms/0bfe47d6d9827220797d130421b04eef/transformed/jetified-cloudinary-android-ui-2.3.1/res
+com.example.medivault.app-drawerlayout-1.1.1-4 /home/omkesh/.gradle/caches/8.13/transforms/0c6c53021d43f55dd53c720a15d351fc/transformed/drawerlayout-1.1.1/res
+com.example.medivault.app-jetified-drawee-2.6.0-5 /home/omkesh/.gradle/caches/8.13/transforms/11eba20928fc81a30138ee233b5b2625/transformed/jetified-drawee-2.6.0/res
+com.example.medivault.app-jetified-activity-1.8.0-6 /home/omkesh/.gradle/caches/8.13/transforms/19868257a99bd9f3f8a4dfd91cf6e5ee/transformed/jetified-activity-1.8.0/res
+com.example.medivault.app-material-1.12.0-7 /home/omkesh/.gradle/caches/8.13/transforms/1b4ac28bc094c7e70cc6d0341480ea62/transformed/material-1.12.0/res
+com.example.medivault.app-jetified-cloudinary-android-preprocess-2.3.1-8 /home/omkesh/.gradle/caches/8.13/transforms/1e3e325df87f61341df84d0a7dbd9933/transformed/jetified-cloudinary-android-preprocess-2.3.1/res
+com.example.medivault.app-jetified-lifecycle-viewmodel-savedstate-2.6.2-9 /home/omkesh/.gradle/caches/8.13/transforms/1eb3bc0da5ab0f9cfd12d2ec244e980d/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/res
+com.example.medivault.app-lifecycle-livedata-2.6.2-10 /home/omkesh/.gradle/caches/8.13/transforms/211f74fc171a57141201a7f29cef66b2/transformed/lifecycle-livedata-2.6.2/res
+com.example.medivault.app-work-runtime-2.7.1-11 /home/omkesh/.gradle/caches/8.13/transforms/21d992fe5e3755c35dd657083e5138b9/transformed/work-runtime-2.7.1/res
+com.example.medivault.app-jetified-play-services-basement-18.1.0-12 /home/omkesh/.gradle/caches/8.13/transforms/25d4af2499db88a23c87a543d8a31b86/transformed/jetified-play-services-basement-18.1.0/res
+com.example.medivault.app-jetified-viewpager2-1.0.0-13 /home/omkesh/.gradle/caches/8.13/transforms/2bfdd9098f75261ada17674315104926/transformed/jetified-viewpager2-1.0.0/res
+com.example.medivault.app-recyclerview-1.1.0-14 /home/omkesh/.gradle/caches/8.13/transforms/3cd482fd77e9d5728179c5e6266d23c9/transformed/recyclerview-1.1.0/res
+com.example.medivault.app-appcompat-1.7.0-15 /home/omkesh/.gradle/caches/8.13/transforms/40eefbe463534cdf99bdb8e9767e11df/transformed/appcompat-1.7.0/res
+com.example.medivault.app-jetified-firebase-common-20.3.3-16 /home/omkesh/.gradle/caches/8.13/transforms/462be5901c3913a3781c28aaa55aa9b6/transformed/jetified-firebase-common-20.3.3/res
+com.example.medivault.app-jetified-glide-4.16.0-17 /home/omkesh/.gradle/caches/8.13/transforms/5d8528dcde8e9fe095d92c2f27f0dcd4/transformed/jetified-glide-4.16.0/res
+com.example.medivault.app-jetified-lifecycle-service-2.6.2-18 /home/omkesh/.gradle/caches/8.13/transforms/5d89a2a395e63ff657804c39fb30adb9/transformed/jetified-lifecycle-service-2.6.2/res
+com.example.medivault.app-lifecycle-viewmodel-2.6.2-19 /home/omkesh/.gradle/caches/8.13/transforms/5d9c4e1903442007fe4c915ce206e436/transformed/lifecycle-viewmodel-2.6.2/res
+com.example.medivault.app-jetified-play-services-base-18.1.0-20 /home/omkesh/.gradle/caches/8.13/transforms/8029ca945f31d58fa2dc1173f562b15a/transformed/jetified-play-services-base-18.1.0/res
+com.example.medivault.app-transition-1.5.0-21 /home/omkesh/.gradle/caches/8.13/transforms/802f23fbfd620c318bf19ce738369c66/transformed/transition-1.5.0/res
+com.example.medivault.app-lifecycle-livedata-core-2.6.2-22 /home/omkesh/.gradle/caches/8.13/transforms/83d1f30f28397407453c02c4afe88490/transformed/lifecycle-livedata-core-2.6.2/res
+com.example.medivault.app-jetified-appcompat-resources-1.7.0-23 /home/omkesh/.gradle/caches/8.13/transforms/856cacb932815307ebf6a6c6f3536bdb/transformed/jetified-appcompat-resources-1.7.0/res
+com.example.medivault.app-jetified-annotation-experimental-1.4.0-24 /home/omkesh/.gradle/caches/8.13/transforms/8708d080d31339ba2e0b0ccf608d2e59/transformed/jetified-annotation-experimental-1.4.0/res
+com.example.medivault.app-coordinatorlayout-1.1.0-25 /home/omkesh/.gradle/caches/8.13/transforms/8feff7d28f7aa08935b18c1b0630f007/transformed/coordinatorlayout-1.1.0/res
+com.example.medivault.app-jetified-savedstate-1.2.1-26 /home/omkesh/.gradle/caches/8.13/transforms/9765ba53d45758875b8a4208072e935a/transformed/jetified-savedstate-1.2.1/res
+com.example.medivault.app-jetified-startup-runtime-1.1.1-27 /home/omkesh/.gradle/caches/8.13/transforms/9b426b1a0c0d09ba4116c6793ab210b4/transformed/jetified-startup-runtime-1.1.1/res
+com.example.medivault.app-fragment-1.5.4-28 /home/omkesh/.gradle/caches/8.13/transforms/a3dadd2de82addc85df6d8514b7720d1/transformed/fragment-1.5.4/res
+com.example.medivault.app-jetified-emoji2-views-helper-1.3.0-29 /home/omkesh/.gradle/caches/8.13/transforms/bc0c724020bdeefda6e0259b45851441/transformed/jetified-emoji2-views-helper-1.3.0/res
+com.example.medivault.app-jetified-tracing-1.1.0-30 /home/omkesh/.gradle/caches/8.13/transforms/bebe0a8ece1087f32c37c2160a8a9f00/transformed/jetified-tracing-1.1.0/res
+com.example.medivault.app-media-1.0.0-31 /home/omkesh/.gradle/caches/8.13/transforms/c1446340e93bd8232ff03efcd32a8ff5/transformed/media-1.0.0/res
+com.example.medivault.app-jetified-profileinstaller-1.3.1-32 /home/omkesh/.gradle/caches/8.13/transforms/d1c866fb9d3fac6e4d9a31e00e30872d/transformed/jetified-profileinstaller-1.3.1/res
+com.example.medivault.app-core-1.13.0-33 /home/omkesh/.gradle/caches/8.13/transforms/dabf1e73459daefc5b4a4ffe47d142e2/transformed/core-1.13.0/res
+com.example.medivault.app-jetified-emoji2-1.3.0-34 /home/omkesh/.gradle/caches/8.13/transforms/deda78479e4d35a1cb3e8c69034a050c/transformed/jetified-emoji2-1.3.0/res
+com.example.medivault.app-constraintlayout-2.0.1-35 /home/omkesh/.gradle/caches/8.13/transforms/df9820b480dd4c164f4bf5bad268ce79/transformed/constraintlayout-2.0.1/res
+com.example.medivault.app-lifecycle-runtime-2.6.2-36 /home/omkesh/.gradle/caches/8.13/transforms/e5f856d8b70c22daa940f42df5b76430/transformed/lifecycle-runtime-2.6.2/res
+com.example.medivault.app-core-runtime-2.2.0-37 /home/omkesh/.gradle/caches/8.13/transforms/eb4d7704b74206e5f1abc34effb3bf48/transformed/core-runtime-2.2.0/res
+com.example.medivault.app-jetified-core-ktx-1.13.0-38 /home/omkesh/.gradle/caches/8.13/transforms/f6e04c7daab6633a9a8ad815097d7a9e/transformed/jetified-core-ktx-1.13.0/res
+com.example.medivault.app-jetified-core-1.7.0-39 /home/omkesh/.gradle/caches/8.13/transforms/fed1411e87618b0cfd77de3ba73a60ab/transformed/jetified-core-1.7.0/res
+com.example.medivault.app-pngs-40 /home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/build/generated/res/pngs/debug
+com.example.medivault.app-res-41 /home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/build/generated/res/processDebugGoogleServices
+com.example.medivault.app-resValues-42 /home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/build/generated/res/resValues/debug
+com.example.medivault.app-updated_navigation_xml-43 /home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/build/generated/updated_navigation_xml/debug
+com.example.medivault.app-packageDebugResources-44 /home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.medivault.app-packageDebugResources-45 /home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.medivault.app-debug-46 /home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.medivault.app-debug-47 /home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/src/debug/res
+com.example.medivault.app-main-48 /home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/src/main/res

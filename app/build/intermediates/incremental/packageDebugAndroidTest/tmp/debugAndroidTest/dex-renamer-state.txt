@@ -1,7 +1,7 @@
-#Thu Jan 01 16:42:21 IST 2026
-base.0=D\:\\DY Patil 3rd Sem\\Final Medivault\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
-base.1=D\:\\DY Patil 3rd Sem\\Final Medivault\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\13\\classes.dex
-base.2=D\:\\DY Patil 3rd Sem\\Final Medivault\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\3\\classes.dex
+#Fri Jan 02 21:03:51 IST 2026
+base.0=/home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
+base.1=/home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/13/classes.dex
+base.2=/home/omkesh/AndroidStudioProjects/MediVault-Release-ByteMe_build/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/3/classes.dex
 path.0=0/classes.dex
 path.1=13/classes.dex
 path.2=3/classes.dex
