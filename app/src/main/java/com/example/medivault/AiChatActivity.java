@@ -85,7 +85,7 @@ public class AiChatActivity extends AppCompatActivity {
             Toast.makeText(this, "Chat history cleared", Toast.LENGTH_SHORT).show();
         });
 
-        gm = new GenerativeModel("gemini-flash-latest", "AIzaSyChY5NkCe1Pa6V21JI1yToH1z-Nb2hq-eA");
+        gm = new GenerativeModel("gemini-flash-latest", "API key");
 
     }
 
