@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/badge/Android-Java-orange?logo=android&logoColor=white)](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe)
 [![Firebase](https://img.shields.io/badge/Firebase-Configured-blue?logo=firebase)](https://console.firebase.google.com/)
-[![Download APK (Drive)](https://img.shields.io/badge/Download%20APK-Google%20Drive-brightgreen?logo=google-drive)](https://drive.google.com/file/d/1EF3Thr7HHAErk8J6h6U0oYeXf6rr7MP-/view?usp=sharing)
+[![Download APK (Drive)](https://img.shields.io/badge/Download%20APK-Google%20Drive-brightgreen?logo=google-drive)](https://drive.google.com/file/d/1uzwQ8NVO9Bo7nZRBp9qIe14Slwv4POVf/view?usp=sharing)
 [![Download APK (raw)](https://img.shields.io/badge/Download%20APK-Raw%20GitHub-brightgreen?logo=github)](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/tree/main/app/build/outputs/apk/debug)
 
 A secure Android app to store, manage and share personal medical reports. MediVault lets users upload and view medical reports, interact with doctors, and access emergency features — built with Java and Firebase.
@@ -10,7 +10,7 @@ A secure Android app to store, manage and share personal medical reports. MediVa
 ---
 
 ## Quick links
-- Download (recommended): Google Drive — https://drive.google.com/file/d/1EF3Thr7HHAErk8J6h6U0oYeXf6rr7MP-/view?usp=sharing  
+- Download (recommended): Google Drive — https://drive.google.com/file/d/1uzwQ8NVO9Bo7nZRBp9qIe14Slwv4POVf/view?usp=sharing  
 - Raw APK (repo branch `files`): https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/tree/main/app/build/outputs/apk/debug  
 - Project: https://github.com/Omkesh-Bash/MediVault-Release-ByteMe
 
@@ -68,7 +68,7 @@ Important:
 
 Download options (choose one):
 - **Google Drive** (recommended for easy public sharing)  
-  [Download Final MediVault.apk — Google Drive](https://drive.google.com/file/d/1EF3Thr7HHAErk8J6h6U0oYeXf6rr7MP-/view?usp=sharing)
+  [Download Final MediVault.apk — Google Drive](https://drive.google.com/file/d/1uzwQ8NVO9Bo7nZRBp9qIe14Slwv4POVf/view?usp=sharing)
 
 - **Raw file from this repository** (branch `files`)  
   [Download Final MediVault.apk — Raw GitHub](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/tree/main/app/build/outputs/apk/debug)
