@@ -2,10 +2,10 @@
 
 [![Build Status](https://img.shields.io/badge/Android-Java-orange?logo=android&logoColor=white)](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe)
 [![Firebase](https://img.shields.io/badge/Firebase-Configured-blue?logo=firebase)](https://console.firebase.google.com/)
-[![Download APK (Drive)](https://img.shields.io/badge/Download%20APK-Google%20Drive-brightgreen?logo=google-drive)](https://drive.google.com/file/d/1uzwQ8NVO9Bo7nZRBp9qIe14Slwv4POVf/view?usp=sharing)
-[![Download APK (raw)](https://img.shields.io/badge/Download%20APK-Raw%20GitHub-brightgreen?logo=github)](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/tree/main/app/build/outputs/apk/debug)
+[![Download APK (Drive)](https://img.shields.io/badge/Download%20APK-Google%20Drive-brightgreen?logo=google-drive)](https://drive.google.com/file/d/1uzwQ8NVO9Bo7nZRBp9qIe14Slwv4POVf/view?usp=sharin[...]
+[![Download APK (raw)](https://img.shields.io/badge/Download%20APK-Raw%20GitHub-brightgreen?logo=github)](https://github.com/Omkesh-Bash/MediVault-Release-ByteMe/tree/main/app/build/outputs/apk/deb[...]
 
-A secure Android app to store, manage and share personal medical reports. MediVault lets users upload and view medical reports, interact with doctors, and access emergency features — built with Java and Firebase.
+A secure Android app to store, manage and share personal medical reports. MediVault lets users upload and view medical reports, interact with doctors, and access emergency features — built with J[...]
 
 ---
 
@@ -34,7 +34,7 @@ A secure Android app to store, manage and share personal medical reports. MediVa
 ---
 
 ## About
-MediVault is an Android application (Java) that acts as a personal vault for medical documents and reports. It provides user authentication, report upload/view/list functionality, doctor-side review/verification, an in-app chat/AI assistant, and emergency for rapid access.
+MediVault is an Android application (Java) that acts as a personal vault for medical documents and reports. It provides user authentication, report upload/view/list functionality, doctor-side revi[...]
 
 ---
 
@@ -168,6 +168,7 @@ Security: Do not commit production credentials or private keys.
 
 
 
+
 ---
 
 ## Project structure
@@ -218,6 +219,5 @@ git checkout -b feat/your-feature
 | Contributors |
   |------------|
 | [Prafulla0001](https://github.com/Prafulla0001/) |
-| [wahedpathan2020-bit](https://github.com/wahedpathan2020-bit) |
-| [shravani12vc-star](https://github.com/shravani12vc-star) |
+| Shree Dhobale |
 | [Omkesh-Bash](https://github.com/Omkesh-Bash) |
