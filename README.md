@@ -219,5 +219,7 @@ git checkout -b feat/your-feature
 | Contributors |
   |------------|
 | [Prafulla0001](https://github.com/Prafulla0001/) |
-| Shree Dhobale |
 | [Omkesh-Bash](https://github.com/Omkesh-Bash) |
+|wahedpathan2020-bit|
+|shravani12vc-star|
+
