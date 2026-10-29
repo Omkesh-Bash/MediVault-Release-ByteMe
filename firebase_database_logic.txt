@@ -1,0 +1,355 @@
+MediVault Firebase Database and App Logic Explanation
+===================================================
+
+Repository: Omkesh-Bash/MediVault-Release-ByteMe
+
+1. High-level architecture
+-------------------------
+This project is an Android app built in Java. It is not using a custom backend server in the usual sense. Instead, it uses Firebase services directly from the Android app:
+
+- Firebase Authentication: login/signup users
+- Cloud Firestore: stores user profile data and medical report metadata
+- Firebase Storage: not directly used in the upload flow; instead the app uploads files to Cloudinary
+- google-services.json: tells Android which Firebase project to connect to
+
+The app package is com.example.medivault, and Firebase project config is present in:
+- app/google-services.json
+
+The Gradle file includes:
+- com.google.firebase:firebase-bom:32.2.2
+- com.google.firebase:firebase-auth
+- com.google.firebase:firebase-firestore
+- com.google.firebase:firebase-storage
+- com.google.firebase:firebase-database
+- apply plugin: 'com.google.gms.google-services'
+
+
+2. Firebase connection setup
+---------------------------
+The connection is created mainly by these 3 things:
+
+A) app/build.gradle
+This is where Firebase dependencies are added.
+
+Example:
+- implementation platform('com.google.firebase:firebase-bom:32.2.2')
+- implementation 'com.google.firebase:firebase-firestore'
+- implementation 'com.google.firebase:firebase-auth'
+- implementation 'com.google.firebase:firebase-storage'
+- implementation 'com.google.firebase:firebase-database'
+- apply plugin: 'com.google.gms.google-services'
+
+This tells Gradle to include the Firebase SDKs and register Google services plugin.
+
+B) app/google-services.json
+This file contains the Firebase project configuration including:
+- project_id: medivaultplus-5ef56
+- project_number: 926533680473
+- storage_bucket: medivaultplus-5ef56.firebasestorage.app
+- android client package name: com.example.medivault
+- API key: AIzaSyCdTMvadYO98ZvOwQVDO2B_yThnEUJvtdM
+
+This file is what makes the Android app know which Firebase project it belongs to.
+
+C) Code usage
+Inside activities and utility classes, Firebase is initialized like this:
+- FirebaseAuth.getInstance()
+- FirebaseFirestore.getInstance()
+
+So the app connects to Firebase services from the code itself.
+
+
+3. Authentication flow (Firebase Auth)
+--------------------------------------
+File: app/src/main/java/com/example/medivault/SignupActivity.java
+
+The flow is:
+
+1. User enters name, email, password, age, blood group, gender, emergency contact.
+2. App validates the inputs.
+3. It calls:
+   auth.createUserWithEmailAndPassword(email, password)
+4. If successful, it gets the current uid:
+   String uid = auth.getCurrentUser().getUid();
+5. Then the app creates a Firestore document in the users collection:
+   firestore.collection("users").document(uid).set(userMap)
+6. The map contains values such as:
+   - name
+   - email
+   - age
+   - gender
+   - bloodGroup
+   - emergency
+   - role
+   - requestedRole (for doctor request) if applicable
+
+This means a Firebase Authentication user and a Firestore profile record are created together.
+
+The relationship is:
+- Firebase Auth user identity = UID
+- Firestore user profile = /users/{uid}
+
+This makes it easier to attach uploaded reports and other data to the same user.
+
+
+File: app/src/main/java/com/example/medivault/LoginActivity.java
+
+The login flow is:
+
+1. Read email and password from the form.
+2. Call:
+   auth.signInWithEmailAndPassword(email, password)
+3. If successful:
+   startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+
+This means the user is logged in through Firebase Auth and then the app opens the home screen.
+
+
+4. Firestore database structure
+--------------------------------
+This app mainly uses Firestore, not Realtime Database. The code uses Firestore collection and document APIs.
+
+Main collection:
+- users
+
+Example structure:
+
+users/
+  {uid}/
+    name: "John"
+    email: "john@example.com"
+    age: "25"
+    gender: "Male"
+    bloodGroup: "O+"
+    emergency: "9876543210"
+    role: "user"
+
+The app also stores reports under each user:
+
+users/
+  {uid}/
+    reports/
+      {reportDocId}/
+        title: "Blood Test"
+        type: "Lab Report"
+        date: "14/08/2026"
+        fileUrl: "https://...cloudinary..."
+        uploadedAt: 1720000000000
+
+This is exactly what the code does in UploadReportActivity.java.
+
+
+5. Report upload workflow (actual process)
+------------------------------------------
+File: app/src/main/java/com/example/medivault/UploadReportActivity.java
+
+The upload logic is:
+
+1. User chooses a file using the system file picker.
+   fileUri = data.getData();
+2. User fills in:
+   - title
+   - type
+   - date
+3. App checks that the user is logged in:
+   if (auth.getCurrentUser() == null) then stop
+4. It gets the user UID:
+   String uid = auth.getCurrentUser().getUid();
+5. It starts upload with Cloudinary:
+   MediaManager.get().upload(fileUri)
+       .option("resource_type", "raw")
+       .unsigned("medivault_reports")
+       .option("folder", "medivault/reports/" + uid)
+6. Cloudinary returns a URL like:
+   https://res.cloudinary.com/.../secure_url
+7. The app creates a Firestore map:
+   Map<String, Object> report = new HashMap<>();
+   report.put("title", title);
+   report.put("type", type);
+   report.put("date", date);
+   report.put("fileUrl", fileUrl);
+   report.put("uploadedAt", System.currentTimeMillis());
+8. It saves this metadata into:
+   firestore.collection("users")
+            .document(uid)
+            .collection("reports")
+            .add(report)
+
+Important detail:
+- The actual file is uploaded to Cloudinary, not Firebase Storage
+- Firestore only stores its metadata (title, type, date, fileUrl)
+- This is why the app can fetch URLs and open the report later
+
+So the design is hybrid:
+- Firebase Auth = identity
+- Firestore = database metadata
+- Cloudinary = media file storage
+
+
+6. Reading reports back from Firestore
+-------------------------------------
+File: app/src/main/java/com/example/medivault/ReportUtils.java
+
+This utility fetches all reports for the currently logged-in user:
+
+db.collection("users")
+  .document(uid)
+  .collection("reports")
+  .get()
+
+Then each document is converted into a Report object:
+
+Report report = doc.toObject(Report.class);
+report.id = doc.getId();
+
+The model class is defined in:
+- app/src/main/java/com/example/medivault/Report.java
+
+Report contains:
+- id
+- title
+- type
+- date
+- fileUrl
+- patientName
+- patientEmail
+
+The fileUrl is later used to open/download or display the actual report.
+
+This means the app does not load all files from Firebase Storage; it loads a list of metadata records from Firestore and then uses the stored fileUrl to fetch the report file itself.
+
+
+7. Doctor-related Firestore logic
+---------------------------------
+The app has doctor role features.
+
+In SignupActivity, if the selected role is Doctor, it sets:
+- role = "user"
+- requestedRole = "doctor"
+
+That means doctor access is not granted immediately; it is marked as requested.
+
+In HomeActivity, the app reads the current user's document:
+
+firestore.collection("users").document(uid).get()
+
+Then checks:
+
+if ("doctor".equals(role)) {
+    layoutNotification.setVisibility(View.VISIBLE);
+    updateNotificationBadge();
+}
+
+Then updateNotificationBadge() reads:
+
+firestore.collection("users")
+    .document(uid)
+    .collection("received_reports")
+    .whereEqualTo("read", false)
+    .get()
+
+This is how doctor notification count works.
+
+Doctor list is also fetched in DoctorUtils.java:
+
+FirebaseFirestore.getInstance()
+    .collection("users")
+    .whereEqualTo("role", "doctor")
+    .get()
+
+This query returns all users whose role field is doctor.
+
+
+8. Actual Firebase database logic in plain words
+-------------------------------------------------
+The app works in this pattern:
+
+- When user signs up:
+  - Firebase Auth creates a user account
+  - Firestore stores the user information in /users/{uid}
+
+- When user logs in:
+  - Firebase Auth verifies credentials
+  - App loads profile and Home screen based on uid
+
+- When user uploads a medical report:
+  - file is uploaded to Cloudinary
+  - the Cloudinary secure URL is captured
+  - report metadata is stored in Firestore under the signed-in user
+
+- When user views reports:
+  - app reads all metadata documents under /users/{uid}/reports
+  - it uses each report's fileUrl to present the report
+
+- When doctor receives a report:
+  - a document may be stored in /users/{doctorUid}/received_reports
+  - app counts unread items and shows badge notifications
+
+This is the core actual working logic of the project.
+
+
+9. Example real database shape
+------------------------------
+Example Firestore structure:
+
+users/
+  ABC123UID/
+    name: "Alice"
+    email: "alice@example.com"
+    age: "28"
+    gender: "Female"
+    bloodGroup: "A+"
+    emergency: "9988776655"
+    role: "user"
+    reports/
+      DOC001/
+        title: "MRI Scan"
+        type: "Diagnostic Report"
+        date: "20/09/2026"
+        fileUrl: "https://res.cloudinary.com/.../image.jpg"
+        uploadedAt: 1760000000000
+
+  DEF456UID/
+    name: "Dr. Kumar"
+    email: "drkumar@example.com"
+    role: "doctor"
+    received_reports/
+      DOC987/
+        read: false
+        fromUser: "ABC123UID"
+
+
+10. Why this app uses Firebase in practice
+-------------------------------------------
+Firebase is used because it is simple for mobile apps:
+- quick user login
+- cloud database for user metadata
+- real-time and document based queries
+- easy integration with Android
+
+This app is not building a full backend server because the whole operation is handled through Firebase APIs directly from the mobile app.
+
+
+11. Important notes and caveats
+------------------------------
+- The app uses Cloudinary for uploaded files, not Firebase Storage. So Firebase is mainly for authentication and database metadata.
+- The app is configured with google-services.json, which means actual Firebase project connection must match this config file.
+- The project includes Firebase Database dependency, but the actual working code mostly uses Firestore.
+- For production, security rules should be configured properly so that users cannot access other users' report data.
+- The app should also validate that only authenticated users can access Firestore collections.
+
+12. Short summary
+-----------------
+The logical backend design of MediVault is:
+
+- Firebase Auth -> verifies users
+- Firestore -> stores user profiles and report metadata
+- Cloudinary -> stores uploaded files
+- Android app -> coordinates everything through Java code and Firebase SDKs
+
+This is the actual operational structure behind the project.
+
+
+End of explanation
+------------------
+This file was prepared to explain the real working logic and Firebase connectivity of the MediVault Android project.
